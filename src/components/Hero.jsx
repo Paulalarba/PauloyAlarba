@@ -95,7 +95,7 @@ export default function Hero() {
 
             
             <div className="image-container">
-                <img src="/Public/image/ProfileRobotic.png" alt="Developer Paul"
+                <img src="https://images4.imgbox.com/74/83/M4BDcc6E_o.png" alt="Developer Paul"
                      className="profile-img" />
             </div>
 
@@ -158,7 +158,7 @@ export default function Hero() {
 
             
             <div className="image-container">
-                <img src="/Public/image/Profile.png" alt="Designer Paul"
+                <img src="https://images4.imgbox.com/8e/27/9n2gTvtL_o.png" alt="Designer Paul"
                      className="profile-img" />
             </div>
 

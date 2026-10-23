@@ -80,7 +80,7 @@ export default function PortfolioContent() {
                 
                 <div className="fp-grid section-reveal">
                     <div className="fp-showcase" aria-label="SugboGo project screenshot">
-                        <img src="/Public/image/ProjectSugboGo.png" alt="SugboGo travel platform interface" />
+                        <img src="https://images4.imgbox.com/31/36/zUIFWeWS_o.png" alt="SugboGo travel platform interface" />
                     </div>
                     <div className="fp-info">
                         <h3 className="fp-project-title">The Ultimate Cebu Experience <span>SugboGo</span></h3>
@@ -109,7 +109,7 @@ export default function PortfolioContent() {
                 
                 <div className="fp-grid fp-grid-reverse section-reveal">
                     <div className="fp-showcase" aria-label="FitTrack project screenshot">
-                        <img src="/Public/image/ProjectFitTrack.png" alt="FitTrack gym membership and wallet interface" />
+                        <img src="https://images4.imgbox.com/3d/8f/4zK2C2z0_o.png" alt="FitTrack gym membership and wallet interface" />
                     </div>
                     <div className="fp-info">
                         <h3 className="fp-project-title">Gym Membership & Wallet <span>FitTrack</span></h3>
@@ -138,7 +138,7 @@ export default function PortfolioContent() {
                 
                 <div className="fp-grid section-reveal">
                     <div className="fp-showcase" aria-label="UC CCS Sit-In project screenshot">
-                        <img src="/Public/image/ProjectSitInMonitoringSystem.png" alt="UC CCS sit-in monitoring system interface" />
+                        <img src="https://images4.imgbox.com/aa/75/V2eXLTMc_o.png" alt="UC CCS sit-in monitoring system interface" />
                     </div>
                     <div className="fp-info">
                         <h3 className="fp-project-title">UC CCS Sit-in <span>Monitoring</span></h3>
@@ -167,7 +167,7 @@ export default function PortfolioContent() {
                 
                 <div className="fp-grid fp-grid-reverse section-reveal">
                     <div className="fp-showcase" aria-label="SportsStore project screenshot">
-                        <img src="/Public/image/ProjectAthletica.png" alt="SportsStore online retail prototype interface" />
+                        <img src="https://images4.imgbox.com/23/20/jLHpHVs4_o.png" alt="SportsStore online retail prototype interface" />
                     </div>
                     <div className="fp-info">
                         <h3 className="fp-project-title">Online Retail Prototype <span>SportsStore</span></h3>

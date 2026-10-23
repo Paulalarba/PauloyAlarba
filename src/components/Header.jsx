@@ -17,7 +17,7 @@ export default function Header() {
   return (<header id="main-header" className={scrolled ? "scrolled" : ""}>
     <div className="nav-container">
         <a href="#top" className="logo" id="logo-link">
-            <img src="/Public/image/Logo.png" alt="Paul Alarba" className="logo-img" />
+            <img src="https://images4.imgbox.com/29/71/FgDDriOW_o.png" alt="Paul Alarba" className="logo-img" />
         </a>
         <button className={`hamburger ${menuOpen ? "active" : ""}`} id="hamburger" aria-label="Toggle menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             <span></span>

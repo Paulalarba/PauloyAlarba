@@ -1,0 +1,124 @@
+<style>
+  @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes scaleIn { from { transform: scale(0.6); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+  @keyframes spinDraw {
+    from { stroke-dashoffset: 565 }
+    to   { stroke-dashoffset: 0 }
+  }
+  @keyframes fillReveal {
+    0%, 60% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+  @keyframes barLoad {
+    from { width: 0 }
+    to   { width: 100% }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1 }
+    50%       { opacity: 0.4 }
+  }
+
+  .loading-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    gap: 36px;
+    background: #1a2333;
+    border-radius: var(--border-radius-lg);
+    padding: 48px 24px;
+  }
+
+  .logo-svg { animation: scaleIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  .ring-path {
+    fill: none;
+    stroke: #2d4060;
+    stroke-width: 18;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    animation: spinDraw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
+  }
+  .ring-glow {
+    fill: none;
+    stroke: #8ab4d4;
+    stroke-width: 3;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    animation: spinDraw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
+    opacity: 0.5;
+  }
+  .letters {
+    animation: fillReveal 0.6s ease 1.4s both;
+  }
+
+  .progress-track {
+    width: 180px;
+    height: 2px;
+    background: #2d4060;
+    border-radius: 2px;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease 0.5s both;
+  }
+  .progress-bar {
+    height: 100%;
+    background: #8ab4d4;
+    border-radius: 2px;
+    animation: barLoad 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+  }
+
+  .loading-text {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8ab4d4;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.6s forwards, pulse 2s ease 2.1s infinite;
+    font-family: var(--font-sans);
+  }
+
+  .dots span {
+    display: inline-block;
+    width: 4px; height: 4px;
+    background: #8ab4d4;
+    border-radius: 50%;
+    margin: 0 2px;
+    opacity: 0;
+  }
+  .dots span:nth-child(1) { animation: fadeIn 0.3s ease 2.1s forwards, pulse 1.2s ease 2.4s infinite; }
+  .dots span:nth-child(2) { animation: fadeIn 0.3s ease 2.3s forwards, pulse 1.2s ease 2.6s infinite; }
+  .dots span:nth-child(3) { animation: fadeIn 0.3s ease 2.5s forwards, pulse 1.2s ease 2.8s infinite; }
+</style>
+
+<div class="loading-wrap">
+  <svg class="logo-svg" width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PA logo loading">
+
+    <circle class="ring-path" cx="70" cy="70" r="56" transform="rotate(-90 70 70)" />
+    <circle class="ring-glow" cx="70" cy="70" r="56" transform="rotate(-90 70 70)" />
+
+    <g class="letters" fill="#2d4060">
+      <text
+        x="70" y="97"
+        text-anchor="middle"
+        font-size="64"
+        font-weight="700"
+        font-family="Georgia, serif"
+        fill="#c8d8e8"
+        letter-spacing="-2"
+      >PA</text>
+    </g>
+  </svg>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:14px;">
+    <div class="progress-track">
+      <div class="progress-bar"></div>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span class="loading-text">Loading</span>
+      <div class="dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</div>

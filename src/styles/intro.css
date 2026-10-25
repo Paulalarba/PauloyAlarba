@@ -268,3 +268,6 @@ html[data-intro="revealing"] .portfolio-surface .page-footer { transition-delay:
   .portfolio-surface[data-intro-active="true"] #home-title { visibility: visible; }
   .portfolio-surface[data-intro-active="true"] :is(.profile-rail,.mobile-header,.mobile-dock,.eyebrow,.page-description,.button,.tools-panel,.showcase-panel,.home-bottom,.page-footer) { opacity: 1; translate: none; }
 }
+.workflow-intro[data-paused="true"] *,
+.workflow-intro[data-paused="true"] *::before,
+.workflow-intro[data-paused="true"] *::after { animation-play-state:paused !important; }

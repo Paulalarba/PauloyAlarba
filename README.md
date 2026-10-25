@@ -37,7 +37,7 @@ Earlier hero and legacy components remain in the project but are not loaded by t
 
 Each fresh homepage load plays an animated Idea / Build / Connect / Ready workflow. The headline reveals word by word and moves into its real homepage position as the sidebar and bento cards appear. The Bitcoin video waits until the intro finishes.
 
-The HTML opening frame shows a brief geometric signal while React loads; the headline appears once in the React introduction. The intro supports Escape, keyboard focus containment, saved dark mode, and reduced motion. It skips direct inner-page visits and viewports shorter than 480px. Navigation within the app does not restart the intro. It waits only for opening images, accepts image errors as settled, and exits after a bounded wait. If the application bundle cannot start, the HTML shell offers a reload fallback.
+The HTML opening frame shows a brief geometric signal while React loads; the headline appears once in the React introduction. The workflow clock starts after the page is visible and painted, pauses in a background tab, and resumes when the tab returns. The intro supports Escape, keyboard focus containment, saved dark mode, and reduced motion. It skips direct inner-page visits and viewports shorter than 480px. Navigation within the app does not restart the intro. It waits only for opening images, accepts image errors as settled, and exits after a bounded wait. If the application bundle cannot start, the HTML shell offers a reload fallback.
 
 - `src/components/WorkflowIntro.jsx`: visual sequence, headline measurement, and accessibility.
 - `src/components/intro/introModel.js`: timing, visit policy, and placement calculations.

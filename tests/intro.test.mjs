@@ -83,6 +83,39 @@ test('images that never settle cannot leave the loader blocking the portfolio', 
   assert.equal(timer.pending, 0);
 });
 
+test('time spent in a background tab does not consume the visible intro', () => {
+  const { timer, timeline, events } = run();
+  timeline.assetsSettled();
+  timer.advance(800);
+  timeline.pause();
+  timer.advance(10800);
+  assert.deepEqual(events, [['node', 1, 650]]);
+  timeline.resume();
+  timer.advance(12200);
+  assert.deepEqual(events.at(-1), ['reveal', 12200]);
+  timer.advance(13070);
+  assert.deepEqual(events.at(-1), ['finish', 13070]);
+});
+
+test('assets settling and reveal animation remain paused until visible', () => {
+  const { timer, timeline, events } = run();
+  timer.advance(1000);
+  timeline.pause();
+  timeline.assetsSettled();
+  timer.advance(6000);
+  assert.equal(events.some(event => event[0] === 'reveal'), false);
+  timeline.resume();
+  timer.advance(7200);
+  assert.deepEqual(events.at(-1), ['reveal', 7200]);
+  timer.advance(7250);
+  timeline.pause();
+  timer.advance(20000);
+  assert.equal(events.some(event => event[0] === 'finish'), false);
+  timeline.resume();
+  timer.advance(20820);
+  assert.deepEqual(events.at(-1), ['finish', 20820]);
+});
+
 test('early exit releases immediately and cancels future work', () => {
   const { timer, timeline, events } = run();
   timer.advance(800);

@@ -19,6 +19,9 @@ export default function WorkflowIntro({ onComplete }) {
     let disposed = false;
     let exiting = false;
     let timeline;
+    let firstFrame = 0;
+    let secondFrame = 0;
+    let assetsReady = false;
     const animations = [];
     const imageCleanups = [];
     const previousOverflow = document.body.style.overflow;
@@ -26,7 +29,7 @@ export default function WorkflowIntro({ onComplete }) {
     document.documentElement.dataset.intro = 'playing';
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    function finish() { timeline?.finish(); }
+    function finish() { if (timeline) timeline.finish(); else onComplete(); }
     finishRef.current = finish;
     function measure() {
       const bounds = target.getBoundingClientRect();
@@ -39,7 +42,6 @@ export default function WorkflowIntro({ onComplete }) {
         transform: placement.transform,
       });
       overlayRef.current.style.setProperty('--intro-flow-top', placement.flowTop + 'px');
-      overlayRef.current.dataset.ready = 'true';
     }
     function animate(element, keyframes, options) {
       if (!element?.animate) return null;
@@ -68,7 +70,6 @@ export default function WorkflowIntro({ onComplete }) {
 
     measure();
     overlayRef.current.focus({ preventScroll: true });
-    timeline = createIntroTimeline({ onNode: setCompleted, onReveal: reveal, onFinish: onComplete });
 
     // Only the opening imagery matters here. A video or a below-fold image must not hold the intro.
     const images = [...document.querySelectorAll('.portrait-wrap img, .mobile-identity img, .bitcoin-poster')]
@@ -86,21 +87,57 @@ export default function WorkflowIntro({ onComplete }) {
     };
     Promise.all(images.map(imageReady)).then(() => {
       if (disposed) return;
-      timeline.assetsSettled();
+      assetsReady = true;
+      timeline?.assetsSettled();
     });
+    function cancelFrames() {
+      if (firstFrame) cancelAnimationFrame(firstFrame);
+      if (secondFrame) cancelAnimationFrame(secondFrame);
+      firstFrame = secondFrame = 0;
+    }
+    function startAfterPaint() {
+      if (disposed || document.hidden || firstFrame || secondFrame) return;
+      firstFrame = requestAnimationFrame(() => {
+        firstFrame = 0;
+        secondFrame = requestAnimationFrame(() => {
+          secondFrame = 0;
+          if (disposed || document.hidden) return;
+          measure();
+          overlayRef.current.dataset.paused = 'false';
+          if (!timeline) {
+            overlayRef.current.dataset.ready = 'true';
+            timeline = createIntroTimeline({ onNode: setCompleted, onReveal: reveal, onFinish: onComplete });
+            if (assetsReady) timeline.assetsSettled();
+          } else {
+            timeline.resume();
+            animations.forEach(animation => { if (animation.playState === 'paused') animation.play(); });
+          }
+        });
+      });
+    }
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const motionChanged = () => { if (media.matches) finish(); };
     media.addEventListener('change', motionChanged);
     const resize = () => { if (exiting || window.innerHeight < 480) finish(); else measure(); };
-    const visibility = () => { if (document.hidden) finish(); };
+    const visibility = () => {
+      if (document.hidden) {
+        cancelFrames();
+        if (timeline) {
+          timeline.pause();
+          overlayRef.current.dataset.paused = 'true';
+          animations.forEach(animation => { if (animation.playState === 'running') animation.pause(); });
+        }
+      } else startAfterPaint();
+    };
     window.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', visibility);
-    // Component readiness may be delayed until a tab is foregrounded.
-    if (media.matches || document.hidden) finish();
+    if (media.matches || window.innerHeight < 480) finish();
+    else startAfterPaint();
 
     return () => {
       disposed = true;
-      timeline.dispose();
+      cancelFrames();
+      timeline?.dispose();
       animations.forEach(animation => animation.cancel());
       imageCleanups.forEach(cleanup => cleanup());
       window.removeEventListener('resize', resize);

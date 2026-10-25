@@ -22,6 +22,6 @@ export default function PortfolioShell({ page, theme, toggleTheme, children }) {
     </aside>
     <header className="mobile-header"><a href={pageHref('home')} className="mobile-identity"><img src={asset('Profile.png')} alt="" /><span><strong>Paul Alarba</strong><small>Web · Blockchain · AI</small></span></a>{toggle}</header>
     {children}
-    <nav className="mobile-dock" aria-label="Mobile navigation">{['home', 'projects', 'contact', 'expertise', 'about'].map(id => { const item = pages.find(item => item.id === id); return <a key={id} href={pageHref(id)} className={'dock-link ' + (id === 'contact' ? 'dock-contact ' : '') + (page === id ? 'is-active' : '')} aria-current={page === id ? 'page' : undefined}><span><Icon name={item.icon} size={21} /></span><small>{item.label}</small></a>; })}</nav>
+    <nav className="mobile-dock" aria-label="Mobile navigation">{['home', 'projects', 'services', 'contact', 'expertise', 'about'].map(id => { const item = pages.find(item => item.id === id); return <a key={id} href={pageHref(id)} className={'dock-link ' + (id === 'contact' ? 'dock-contact ' : '') + (page === id ? 'is-active' : '')} aria-current={page === id ? 'page' : undefined}><span><Icon name={item.icon} size={21} /></span><small>{item.label}</small></a>; })}</nav>
   </>;
 }

@@ -3,7 +3,7 @@ export const resume = import.meta.env.BASE_URL + 'Public/PaulAlarba_resume.pdf';
 export const email = 'paulnicoralarba@gmail.com';
 export const social = { github: 'https://github.com/Paulalarba', linkedin: 'https://www.linkedin.com/in/paul-alarba', x: 'https://x.com/paulalarba' };
 export const pages = [
-  { id: 'home', label: 'Home', icon: 'home' }, { id: 'projects', label: 'Projects', icon: 'work' },
+  { id: 'home', label: 'Home', icon: 'home' }, { id: 'projects', label: 'Projects', icon: 'work' }, { id: 'services', label: 'Services', icon: 'spark' },
   { id: 'expertise', label: 'Expertise', icon: 'layers' }, { id: 'about', label: 'About', icon: 'user' }, { id: 'contact', label: 'Contact', icon: 'mail' },
 ];
 export const tools = [

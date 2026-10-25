@@ -23,6 +23,7 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     const render = () => renderToStaticMarkup(React.createElement(App));
     assert.equal(pageHref('home'), '/');
     assert.equal(pageHref('projects'), '/projects');
+    assert.equal(pageHref('services'), '/services');
     let home = render();
     assert.match(home, /href="\/projects"/);
     assert.match(home, /href="\/contact"/);
@@ -32,11 +33,16 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     assert.match(intro, /class="workflow-intro"/);
     assert.doesNotMatch(intro, /Skip intro|intro-skip/);
     reducedMotion = true;
-    for (const page of ['projects', 'expertise', 'about', 'contact']) {
+    for (const page of ['projects', 'services', 'expertise', 'about', 'contact']) {
       location.pathname = '/' + page;
       assert.equal(routePage(), page);
       assert.match(render(), new RegExp('href="/' + page + '"[^>]+aria-current="page"'));
     }
+    location.pathname = '/services';
+    const services = render();
+    for (const title of ['Understand. Build. Improve.', 'Websites', 'Web applications', 'Connected workflows', 'Blockchain prototypes', 'AI-assisted tools', 'One request. A clearer next step.']) assert(services.includes(title));
+    assert.equal((services.match(/class="service-card"/g) || []).length, 5);
+    assert.match(services, /href="\/contact"/);
     location.pathname = '/projects'; location.search = '?project=sugbogo';
     assert.match(render(), /<dialog/);
     location.pathname = '/'; location.search = ''; location.hash = '#work?project=fittrack';

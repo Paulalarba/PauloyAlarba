@@ -20,11 +20,12 @@ Build with `npm run build`, then use `npm run preview` to inspect the production
 - `src/components/BitcoinCard.jsx`: local animation and reduced-motion fallback.
 - `src/components/CursorRing.jsx`: decorative cursor follower for fine mouse pointers.
 - `src/components/PortfolioPages.jsx`: Projects, Expertise, About, Contact, and accessible native project dialogs.
+- `src/components/ServicesPage.jsx`: services, three-step method, and example workflow.
 - `src/components/ContactForm.jsx`: validated email-draft form.
 - `src/styles/site.css`: shared tokens, components, dark theme, and responsive layouts.
 - `public/Public/`: local images, Bitcoin video, poster, and résumé.
 
-Navigation uses `/`, `/projects`, `/expertise`, `/about`, and `/contact`. Vite handles direct routes locally; a static host must rewrite these paths to `index.html`. Old `#home`, `#top`, `#work`, and `#education` links redirect to the equivalent clean path. A project can be linked directly with `/projects?project=sugbogo` (also `fittrack`, `sitin`, or `sportsstore`).
+Navigation uses `/`, `/projects`, `/services`, `/expertise`, `/about`, and `/contact`. Vite handles direct routes locally; a static host must rewrite these paths to `index.html`. Old `#home`, `#top`, `#work`, and `#education` links redirect to the equivalent clean path. A project can be linked directly with `/projects?project=sugbogo` (also `fittrack`, `sitin`, or `sportsstore`).
 
 The site uses system fonts and inline SVG icons. SportsStore retains its original hosted screenshot, with a project placeholder if that image cannot load. Other featured assets are local.
 

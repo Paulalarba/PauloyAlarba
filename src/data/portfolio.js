@@ -26,6 +26,33 @@ export const skillLogos = {
 };
 export const projects = [
   {
+    id: 'kamayaral', name: 'KamayAral', category: 'FSL learning & accessibility', image: 'ProjectKamayAral.png',
+    imageAlt: 'KamayAral course dashboard design',
+    summary: 'A Filipino Sign Language learning platform.',
+    description: 'An FSL learning and access platform with structured courses, a searchable sign dictionary, and tools for Deaf-led education. It brings learners, teachers, and organizations into one accessible experience.',
+    problem: 'Learners need a clear way to study FSL, while Deaf educators need a trusted path to share knowledge and connect with organizations.',
+    features: ['Structured courses, lessons, quizzes, and progress tracking', 'Sign dictionary and accessible learning materials', 'Teacher tools and workshop request workflows'],
+    tech: ['ASP.NET Core 10', 'C#', 'Razor Views', 'EF Core', 'PostgreSQL'], github: 'https://github.com/Paulalarba/KamayAral',
+  },
+  {
+    id: 'kamayaral-ai', name: 'KamayAral AI', category: 'Computer vision research', image: 'ProjectKamayAralAI.svg',
+    imageAlt: 'Abstract FSL hand landmark and six-sign baseline illustration',
+    summary: 'An offline research pilot for FSL sign recognition.',
+    description: 'A separate Python research workspace that extracts hand and pose landmarks from FSL video clips and trains a small isolated-sign baseline. It records dataset splits and evaluation results before any learner-facing use.',
+    problem: 'Automated practice feedback requires careful data handling and evaluation, especially across different signers and signs.',
+    features: ['MediaPipe landmark extraction from video samples', 'Six-sign temporal classification baseline and evaluation', 'ONNX export path for future reviewed browser experiments'],
+    tech: ['Python', 'MediaPipe', 'PyTorch', 'scikit-learn', 'ONNX'], github: 'https://github.com/Paulalarba/KamayAral-AI',
+  },
+  {
+    id: 'educredit', name: 'EduCredit', category: 'Campus payments & credit', image: 'ProjectEduCredit.png',
+    imageAlt: 'EduCredit brand mark',
+    summary: 'Campus credit and QR payments in one system.',
+    description: 'A campus platform connecting students, vendors, and administrators. Students can manage credit and repayments, vendors handle their product catalog and QR payments, and administrators oversee accreditation and limits.',
+    problem: 'Campus spending and short-term credit need a coordinated process for identity checks, transactions, repayments, and vendor operations.',
+    features: ['Student KYC and credit limit management', 'Session-based QR payment and vendor confirmation', 'Repayment tracking, health scoring, and spending analytics'],
+    tech: ['ASP.NET Core 10', 'C#', 'EF Core', 'PostgreSQL', 'Razor Views'], github: 'https://github.com/Paulalarba/EduCredit',
+  },
+  {
     id: 'sugbogo', name: 'SugboGo', category: 'Travel & discovery', image: 'ProjectSugboGo.png',
     summary: 'A connected travel experience for Cebu.',
     description: 'A Cebu travel ecosystem connecting explorers, local partners, and administrators. Vibe-based destination discovery brings the right places closer, while booking and operational tools keep the journey organized.',

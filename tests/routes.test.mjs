@@ -43,6 +43,12 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     for (const title of ['Understand. Build. Improve.', 'Websites', 'Web applications', 'Connected workflows', 'Blockchain prototypes', 'AI-assisted tools', 'One request. A clearer next step.']) assert(services.includes(title));
     assert.equal((services.match(/class="service-card"/g) || []).length, 5);
     assert.match(services, /href="\/contact"/);
+    location.pathname = '/projects';
+    const gallery = render();
+    for (const name of ['KamayAral', 'KamayAral AI', 'EduCredit']) assert(gallery.includes(name));
+    assert.equal((gallery.match(/class="project-card"/g) || []).length, 7);
+    location.search = '?project=kamayaral-ai';
+    assert.match(render(), /Six-sign temporal classification baseline/);
     location.pathname = '/projects'; location.search = '?project=sugbogo';
     assert.match(render(), /<dialog/);
     location.pathname = '/'; location.search = ''; location.hash = '#work?project=fittrack';

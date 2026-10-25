@@ -26,7 +26,7 @@ export function PageHeading({ eyebrow, title, titleId, description, children }) 
 export function ProjectImage({ project, ...props }) {
   const [failed, setFailed] = useState(false);
   if (failed) return <div className="image-placeholder"><Icon name="code" size={36} /><span>{project.name}</span></div>;
-  return <img src={project.remoteImage || asset(project.image)} alt={project.name + ' project interface'} loading="lazy" {...props} onError={() => setFailed(true)} />;
+  return <img src={project.remoteImage || asset(project.image)} alt={project.imageAlt || project.name + ' project interface'} loading="lazy" {...props} onError={() => setFailed(true)} />;
 }
 
 export function HomeHeadline() {

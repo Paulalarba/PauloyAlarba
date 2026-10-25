@@ -580,16 +580,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible 
 }
 
 .tool-mark {
-  font-size:17px;
-  font-weight:750;
-  color:var(--tool-color);
-  letter-spacing:-.05em;
-  min-width:23px;
-  text-align:center
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:27px;
+  height:27px;
+  border-radius:8px;
+  background:var(--tint)
 }
 
-[data-theme="dark"] .tool-mark {
-  filter:brightness(1.5)
+.tool-mark img {
+  display:block;
+  width:20px;
+  height:20px;
+  object-fit:contain
+}
+
+[data-theme="dark"] .tool-mark img,
+[data-theme="dark"] .skill-logo img {
+  filter:brightness(1.4)
 }
 
 @keyframes tools-scroll {
@@ -1333,7 +1342,8 @@ a.bento-card:hover {
   background:var(--paper);
   border:1px solid var(--line);
   border-radius:22px;
-  box-shadow:var(--shadow)
+  box-shadow:var(--shadow);
+  min-width:0
 }
 
 .expertise-card-top {
@@ -1385,23 +1395,61 @@ a.bento-card:hover {
 }
 
 .skill-group ul {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
   list-style:none;
   padding:0;
-  margin:12px 0 0;
-  display:grid;
-  gap:9px
+  margin:12px 0 0
 }
 
 .skill-group li {
   display:flex;
-  align-items:flex-start;
-  gap:7px;
-  font-size:12px
+  align-items:center;
+  min-width:0;
+  min-height:42px;
+  gap:8px;
+  padding:6px 8px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--white);
+  font-size:11px;
+  font-weight:600;
+  line-height:1.25
 }
 
-.skill-group li svg {
-  margin-top:2px;
-  color:#6197c8
+.skill-logo {
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:27px;
+  height:27px;
+  border-radius:7px;
+  background:var(--tint)
+}
+
+.skill-logo img {
+  width:19px;
+  height:19px;
+  object-fit:contain
+}
+
+.expertise-practices {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:21px;
+  padding-top:17px;
+  border-top:1px solid var(--line)
+}
+
+.expertise-practices span {
+  padding:5px 8px;
+  border-radius:999px;
+  background:var(--wash);
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.3
 }
 
 .about-main {
@@ -1450,18 +1498,20 @@ a.bento-card:hover {
   position:relative;
   align-self:stretch;
   display:flex;
-  align-items:flex-end;
-  min-width:0
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  padding:24px 18px 56px
 }
 
 .about-portrait>img {
   position:relative;
-  width:125%;
-  max-width:none;
-  height:410px;
-  object-fit:cover;
-  object-position:center top;
-  margin-left:-12%;
+  width:100%;
+  max-width:500px;
+  height:auto;
+  max-height:440px;
+  object-fit:contain;
+  object-position:center;
   mask-image:linear-gradient(#000 75%,transparent 99%)
 }
 
@@ -2025,172 +2075,91 @@ a.bento-card:hover {
     column-gap:22px;
     padding:17px 20px
   }
-  .about-preview .card-heading {
-    flex:1
-  }
-  .about-preview>p {
-    margin:0;
-    font-size:11px
-  }
-  .about-preview .about-mini {
-    margin:0
-  }
-  .about-preview .location-label {
-    display:none
-  }
-  .home-page .page-heading {
-    align-items:flex-start
-  }
-  .home-page .page-heading h1 {
-    font-size:31px
-  }
-  .home-page .page-description {
-    max-width:390px
-  }
-  .home-page .page-heading .button {
-    margin-top:25px;
-    font-size:11px;
-    padding:12px 15px
-  }
-  .small-break {
-    display:block
-  }
-  .bitcoin-copy h2 {
-    font-size:26px
-  }
-  .bitcoin-stage {
-    height:210px
-  }
-  .bitcoin-copy {
-    padding:0 20px
-  }
-  .bitcoin-copy p {
-    font-size:10px
-  }
-  .bitcoin-card-top {
-    padding:15px 13px 0
-  }
-  .micro-label {
-    font-size:7px
-  }
-  @media(max-width:540px) {
-  .mobile-header {
-    padding:19px 21px 3px
-  }
-  .main-panel {
-    padding:28px 20px 100px
-  }
-  .page-heading {
-    margin-bottom:23px;
-    gap:14px
-  }
-  .page-heading h1 {
-    font-size:32px
-  }
-  .page-description {
-    font-size:12px;
-    margin-top:12px
-  }
-  .home-page .page-heading {
-    display:block
-  }
-  .home-page .page-heading h1 {
-    font-size:35px;
-    line-height:1.09
-  }
-  .small-break {
-    display:none
-  }
-  .home-page .page-heading .button {
-    margin-top:17px;
-    padding:11px 17px;
-    min-height:42px
-  }
-  .eyebrow {
-    font-size:9px
-  }
-  .tools-panel {
-    display:block;
-    padding:12px;
-    border-radius:21px;
-    margin-bottom:19px
-  }
-  .tools-heading {
-    display:flex;
-    gap:9px;
-    align-items:center;
-    border:0;
-    margin-bottom:9px;
-    padding:0 2px
-  }
-  .tools-heading h2 {
-    font-size:11px;
-    margin:0
-  }
-  .tools-heading .eyebrow {
-    font-size:8px
-  }
-  .tools-window {
-    border-radius:11px
-  }
-  .tool-item {
-    padding:11px 13px;
-    font-size:11px;
-    gap:7px
-  }
-  .tool-item::after {
-    margin-left:9px
-  }
-  .showcase-panel {
-    padding:9px;
-    border-radius:25px
-  }
-  .home-bento {
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    grid-template-rows:auto;
-    gap:10px
-  }
-  .bitcoin-card {
-    grid-column:1 / -1;
-    grid-row:auto;
-    min-height:495px
-  }
-  .bitcoin-card-top {
-    padding:17px 19px 0
-  }
-  .micro-label {
-    font-size:8px
-  }
-  @media(prefers-reduced-motion:reduce) {
+  .about-preview .card-heading { flex:1 }
+  .about-preview>p { margin:0; font-size:11px }
+  .about-preview .about-mini { margin:0 }
+  .about-preview .location-label { display:none }
+  .home-page .page-heading { align-items:flex-start }
+  .home-page .page-heading h1 { font-size:31px }
+  .home-page .page-description { max-width:390px }
+  .home-page .page-heading .button { margin-top:25px; font-size:11px; padding:12px 15px }
+  .small-break { display:block }
+  .bitcoin-copy h2 { font-size:26px }
+  .bitcoin-stage { height:210px }
+  .bitcoin-copy { padding:0 20px }
+  .bitcoin-copy p { font-size:10px }
+  .bitcoin-card-top { padding:15px 13px 0 }
+  .micro-label { font-size:7px }
+  .expertise-intro { grid-template-columns:1fr; gap:17px; padding:24px }
+  .expertise-grid { grid-template-columns:1fr; gap:14px }
+  .expertise-card { padding:25px }
+  .project-gallery { grid-template-columns:1fr }
+  .about-main,.contact-layout { grid-template-columns:1fr }
+  .about-story { padding:30px 27px }
+  .about-portrait { min-height:350px }
+  .page-callout { flex-wrap:wrap }
+  .page-callout .button { margin-left:0 }
+}
+
+@media(max-width:540px) {
+  .mobile-header { padding:19px 21px 3px }
+  .main-panel { padding:28px 20px 100px }
+  .page-heading { margin-bottom:23px; gap:14px; flex-wrap:wrap }
+  .page-heading h1 { font-size:32px }
+  .page-description { font-size:12px; margin-top:12px }
+  .home-page .page-heading { display:block }
+  .home-page .page-heading h1 { font-size:35px; line-height:1.09 }
+  .small-break { display:none }
+  .home-page .page-heading .button { margin-top:17px; padding:11px 17px; min-height:42px }
+  .eyebrow { font-size:9px }
+  .tools-panel { display:block; padding:12px; border-radius:21px; margin-bottom:19px }
+  .tools-heading { display:flex; gap:9px; align-items:center; border:0; margin-bottom:9px; padding:0 2px }
+  .tools-heading h2 { font-size:11px; margin:0 }
+  .tools-heading .eyebrow { font-size:8px }
+  .tools-window { border-radius:11px }
+  .tool-item { padding:11px 13px; font-size:11px; gap:7px }
+  .tool-item::after { margin-left:9px }
+  .showcase-panel { padding:9px; border-radius:25px }
+  .home-bento { grid-template-columns:1fr; grid-template-rows:none; gap:10px }
+  .home-bento > * { grid-column:1; grid-row:auto }
+  .bitcoin-card { min-height:460px }
+  .projects-preview { min-height:295px }
+  .expertise-preview { min-height:235px }
+  .about-preview { display:block; min-height:190px; padding:18px }
+  .about-preview>p { margin-top:12px }
+  .about-preview .about-mini { margin-top:15px }
+  .bitcoin-card-top { padding:17px 19px 0 }
+  .micro-label { font-size:8px }
+  .home-bottom { align-items:flex-start; flex-direction:column; gap:12px }
+  .expertise-card { padding:21px 18px }
+  .skill-group ul { gap:7px }
+  .skill-group li { font-size:10px; padding:6px }
+  .expertise-intro { padding:21px }
+  .expertise-intro h2 { font-size:26px }
+  .page-callout { padding:21px }
+  .page-callout .button { width:100% }
+  .contact-layout { padding:9px; gap:9px }
+  .contact-fields { grid-template-columns:1fr }
+  .education-row { gap:10px }
+  .education-years { font-size:10px }
+  .page-footer { flex-wrap:wrap; gap:5px }
+}
+
+@media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {
     animation:none!important;
     transition:none!important;
     scroll-behavior:auto!important
   }
-  .tools-window {
-    overflow-x:auto;
-    mask-image:none
-  }
-  .tools-set[aria-hidden="true"] {
-    display:none
-  }
+  .tools-window { overflow-x:auto; mask-image:none }
+  .tools-set[aria-hidden="true"] { display:none }
 }
 
 @media(prefers-reduced-transparency:reduce) {
-  .profile-rail,.mobile-dock {
-    backdrop-filter:none;
-    background:var(--paper)
-  }
+  .profile-rail,.mobile-dock { backdrop-filter:none; background:var(--paper) }
 }
 
 @media(prefers-contrast:more) {
-  :root {
-    --muted:#273854;
-    --line:rgba(11,30,63,.4)
-  }
-  :root[data-theme="dark"] {
-    --muted:#d3deef;
-    --line:rgba(255,255,255,.45)
-  }
+  :root { --muted:#273854; --line:rgba(11,30,63,.4) }
+  :root[data-theme="dark"] { --muted:#d3deef; --line:rgba(255,255,255,.45) }
 }

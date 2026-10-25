@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import ContactForm from './ContactForm.jsx';
-import { asset, education, email, expertise, projects, resume, social } from '../data/portfolio.js';
+import { asset, education, email, expertise, logo, projects, resume, skillLogos, social } from '../data/portfolio.js';
 import { Icon, IconTile, PageHeading, ProjectImage } from './UI.jsx';
 import { pageHref } from '../routing.js';
 function initialProject() {
@@ -49,7 +49,7 @@ export function ExpertisePage() {
   return <>
     <PageHeading eyebrow="WHAT I DO" title="One curious mind. Different possibilities." description="My technical toolkit spans the web, decentralized systems, and the possibilities of AI." />
     <section className="expertise-intro glass-panel"><div><span className="eyebrow">THE WAY I THINK</span><h2>Understand the problem.<br /><span>Then build the system.</span></h2></div><p>I enjoy transforming complex logic into simple, useful experiences. The tools change. The goal stays the same: make something that works for the people using it.</p></section>
-    <section className="expertise-grid" aria-label="Areas of expertise">{expertise.map(item => <article className="expertise-card" key={item.number}><div className="expertise-card-top"><IconTile name={item.icon} /><span>{item.number}</span></div><h2>{item.title}</h2><h3>{item.subtitle}</h3><p>{item.description}</p>{item.groups.map(group => <div className="skill-group" key={group.title}><h4>{group.title}</h4><ul>{group.items.map(skill => <li key={skill}><Icon name="check" size={14} />{skill}</li>)}</ul></div>)}</article>)}</section>
+    <section className="expertise-grid" aria-label="Areas of expertise">{expertise.map(item => <article className="expertise-card" key={item.number}><div className="expertise-card-top"><IconTile name={item.icon} /><span>{item.number}</span></div><h2>{item.title}</h2><h3>{item.subtitle}</h3><p>{item.description}</p>{item.groups.map(group => <div className="skill-group" key={group.title}><h4>{group.title}</h4><ul>{group.items.map(skill => <li key={skill}><span className="skill-logo"><img src={logo(skillLogos[skill])} alt="" width="22" height="22" loading="lazy" /></span><span>{skill}</span></li>)}</ul></div>)}<div className="expertise-practices" aria-label="Related experience">{item.practices.map(practice => <span key={practice}>{practice}</span>)}</div></article>)}</section>
     <div className="page-callout"><IconTile name="work" /><div><h2>See the thinking in practice.</h2><p>Explore the systems and interfaces I’ve built.</p></div><a className="button button-primary" href={pageHref('projects')}>View projects <Icon name="external" size={16} /></a></div>
   </>;
 }

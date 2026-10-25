@@ -3,7 +3,7 @@ import { asset, expertise, projects, resume, tools } from '../data/portfolio.js'
 import { HomeHeadline, Icon, IconTile, PageHeading, ProjectImage } from './UI.jsx';
 import { pageHref } from '../routing.js';
 function ToolItem({ tool }) {
-  return <span className="tool-item"><span className="tool-mark" style={{ '--tool-color': tool.color }}>{tool.mark}</span><span>{tool.name}</span></span>;
+  return <span className="tool-item"><span className="tool-mark"><img src={tool.logo} alt="" width="22" height="22" /></span><span>{tool.name}</span></span>;
 }
 export default function HomePage({ introActive = false }) {
   return <div className="home-page">

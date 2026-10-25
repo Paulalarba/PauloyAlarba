@@ -6,12 +6,24 @@ export const pages = [
   { id: 'home', label: 'Home', icon: 'home' }, { id: 'projects', label: 'Projects', icon: 'work' }, { id: 'services', label: 'Services', icon: 'spark' },
   { id: 'expertise', label: 'Expertise', icon: 'layers' }, { id: 'about', label: 'About', icon: 'user' }, { id: 'contact', label: 'Contact', icon: 'mail' },
 ];
+export const logo = name => import.meta.env.BASE_URL + 'logos/' + name + '.svg';
 export const tools = [
-  { name: 'React', mark: '⚛', color: '#1683a5' }, { name: 'ASP.NET Core', mark: '.NET', color: '#6a4fba' },
-  { name: 'JavaScript', mark: 'JS', color: '#967000' }, { name: 'PostgreSQL', mark: 'PG', color: '#336791' },
-  { name: 'Tailwind CSS', mark: '≈', color: '#168b9f' }, { name: 'Solidity', mark: '◇', color: '#586078' },
-  { name: 'Ethereum', mark: 'Ξ', color: '#6276b6' }, { name: 'GitHub', mark: 'GH', color: '#192438' },
+  { name: 'React', logo: logo('react') }, { name: 'HTML5', logo: logo('html5') },
+  { name: 'CSS', logo: logo('css') }, { name: 'JavaScript', logo: logo('javascript') },
+  { name: 'Tailwind CSS', logo: logo('tailwindcss') }, { name: 'ASP.NET Core', logo: logo('dotnet') },
+  { name: 'PostgreSQL', logo: logo('postgresql') }, { name: 'Solidity', logo: logo('solidity') },
+  { name: 'Ethereum', logo: logo('ethereum') }, { name: 'GitHub', logo: logo('github') },
+  { name: 'Codex', logo: logo('codex') },
 ];
+export const skillLogos = {
+  React: 'react', HTML5: 'html5', CSS: 'css', JavaScript: 'javascript',
+  'Tailwind CSS': 'tailwindcss', Bootstrap: 'bootstrap',
+  'ASP.NET Core': 'dotnet', 'Entity Framework Core': 'dotnet',
+  PostgreSQL: 'postgresql', Solidity: 'solidity', Ethereum: 'ethereum',
+  Polkadot: 'polkadot', 'Web3.js': 'web3dotjs', 'Ethers.js': 'ethers',
+  Codex: 'codex', GitHub: 'github', n8n: 'n8n', Ollama: 'ollama',
+  'DeepSeek-R1': 'deepseek', Baserow: 'baserow', 'Robot Framework': 'robotframework',
+};
 export const projects = [
   {
     id: 'sugbogo', name: 'SugboGo', category: 'Travel & discovery', image: 'ProjectSugboGo.png',
@@ -48,16 +60,17 @@ export const projects = [
 ];
 export const expertise = [
   { number: '01', icon: 'code', title: 'Web development', subtitle: 'From the interface to the database.', description: 'Responsive interfaces and structured back ends, with an emphasis on clear architecture and practical functionality.', groups: [
-    { title: 'Front end', items: ['React', 'HTML / CSS', 'Tailwind CSS', 'Bootstrap', 'Razor Views', 'JavaScript / jQuery'] },
-    { title: 'Back end & architecture', items: ['ASP.NET Core MVC', 'Entity Framework', 'PostgreSQL / SQL Server', 'Clean Architecture', 'Design Systems'] },
-  ] },
+    { title: 'Front end', items: ['React', 'HTML5', 'CSS', 'JavaScript', 'Tailwind CSS', 'Bootstrap'] },
+    { title: 'Back end', items: ['ASP.NET Core', 'Entity Framework Core', 'PostgreSQL'] },
+  ], practices: ['Razor Views', 'SQL Server', 'Clean Architecture', 'Design Systems'] },
   { number: '02', icon: 'cube', title: 'Blockchain development', subtitle: 'Exploring the decentralized web.', description: 'Smart contracts and Web3 development are part of my technical focus, alongside the tools that connect applications to blockchain networks.', groups: [
-    { title: 'Contracts & ecosystems', items: ['Solidity / Contracts', 'Ethereum Ecosystem', 'Polkadot / Substrate'] },
-    { title: 'Development tools', items: ['Web3.js / Ethers.js', 'Hardhat / Truffle'] },
-  ] },
-  { number: '03', icon: 'spark', title: 'AI automation', subtitle: 'Make room for the work that matters.', description: 'An area I’m actively exploring: connecting AI with useful workflows and finding opportunities to reduce repetitive work.', groups: [
-    { title: 'Current focus', items: ['AI-assisted development', 'Workflow exploration', 'Practical automation'] },
-  ] },
+    { title: 'Contracts & ecosystems', items: ['Solidity', 'Ethereum', 'Polkadot'] },
+    { title: 'Development tools', items: ['Web3.js', 'Ethers.js'] },
+  ], practices: ['Substrate', 'Hardhat', 'Truffle'] },
+  { number: '03', icon: 'spark', title: 'AI automation', subtitle: 'Make room for the work that matters.', description: 'I’m exploring connected workflows, local AI models, and useful automation with human review.', groups: [
+    { title: 'Automation & data', items: ['n8n', 'Baserow', 'Robot Framework'] },
+    { title: 'Local AI & development', items: ['Ollama', 'DeepSeek-R1', 'Codex', 'GitHub'] },
+  ], practices: ['Workflow exploration', 'Practical automation', 'Human review'] },
 ];
 export const education = [
   { level: 'College', years: '2023 — Present', school: 'University of Cebu Main Campus' },

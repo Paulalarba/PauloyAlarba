@@ -4,17 +4,14 @@ import HomePage from './components/HomePage.jsx';
 import WorkflowIntro from './components/WorkflowIntro.jsx';
 import CursorRing from './components/CursorRing.jsx';
 import { ProjectsPage, ExpertisePage, AboutPage, ContactPage } from './components/PortfolioPages.jsx';
-import { INTRO_SESSION_KEY, shouldPlayIntro } from './components/intro/introModel.js';
+import { shouldPlayIntro } from './components/intro/introModel.js';
 import { pages } from './data/portfolio.js';
 import { canonicalizeLegacyRoute, isInternalRoute, routePage } from './routing.js';
 
 function initialIntro() {
-  let sessionSeen = false;
-  try { sessionSeen = sessionStorage.getItem(INTRO_SESSION_KEY) === '1'; } catch { /* Storage can be unavailable. */ }
   return shouldPlayIntro({
     page: routePage(),
     reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-    sessionSeen,
     viewportHeight: window.innerHeight,
   });
 }
@@ -31,7 +28,6 @@ export default function App() {
   pageRef.current = page;
   const completeIntro = useCallback(() => {
     const restoreFocus = document.activeElement?.closest?.('.workflow-intro');
-    try { sessionStorage.setItem(INTRO_SESSION_KEY, '1'); } catch { /* The intro still works without storage. */ }
     setIntroActive(false);
     if (restoreFocus) requestAnimationFrame(() => mainRef.current?.focus({ preventScroll: true }));
   }, []);

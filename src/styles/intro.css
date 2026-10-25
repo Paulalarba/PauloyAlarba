@@ -222,24 +222,6 @@ html[data-intro="revealing"] .portfolio-surface .page-footer { transition-delay:
 .workflow-status.is-ready { color: var(--intro-success); }
 .workflow-status.is-ready > span { animation: none; }
 @keyframes intro-status-pulse { 50% { opacity: .35; } }
-.intro-skip {
-  position: fixed;
-  bottom: max(26px, env(safe-area-inset-bottom));
-  right: clamp(24px, 7vw, 80px);
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 39px;
-  padding: 9px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--muted);
-  font-size: 11px;
-  transition: color 150ms, background 150ms;
-}
-.intro-skip:hover { color: var(--blue); background: var(--white); }
-.workflow-intro[data-phase="revealing"] .intro-skip { pointer-events: none; }
 
 @media (max-width: 540px) {
   .workflow-intro { --intro-node-size: 41px; }
@@ -255,12 +237,10 @@ html[data-intro="revealing"] .portfolio-surface .page-footer { transition-delay:
   .port-in { left: -4px; }
   .port-out { right: -4px; }
   .workflow-status { font-size: 9px; margin-top: 25px; }
-  .intro-skip { font-size: 10px; min-height: 36px; }
 }
 @media (max-height: 460px) {
   .intro-brand { top: 13px; }
   .intro-brand > span { font-size: 24px; }
-  .intro-skip { bottom: 12px; }
   .workflow-status { margin-top: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -282,7 +262,7 @@ html[data-intro="revealing"] .portfolio-surface .page-footer { transition-delay:
 
 /* CSS also provides a graceful exit when the Web Animations API is unavailable. */
 .workflow-intro[data-phase="revealing"] .intro-curtain { opacity: 0; transition: opacity 480ms ease-out; }
-.workflow-intro[data-phase="revealing"] :is(.intro-flow,.intro-brand,.intro-skip) { opacity: 0; transition: opacity 300ms ease-out; }
+.workflow-intro[data-phase="revealing"] :is(.intro-flow,.intro-brand) { opacity: 0; transition: opacity 300ms ease-out; }
 @media (max-height: 479px) {
   .workflow-intro { display: none; }
   .portfolio-surface[data-intro-active="true"] #home-title { visibility: visible; }

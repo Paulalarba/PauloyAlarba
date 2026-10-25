@@ -36,10 +36,10 @@ function run() {
   return { timer, timeline, events };
 }
 
-test('first homepage visit plays; repeat visits, direct pages, motion preference, and short windows skip', () => {
+test('each homepage load plays; direct pages, motion preference, and short windows skip', () => {
   const first = { page: 'home', reducedMotion: false, sessionSeen: false, viewportHeight: 720 };
   assert.equal(shouldPlayIntro(first), true);
-  assert.equal(shouldPlayIntro({ ...first, sessionSeen: true }), false);
+  assert.equal(shouldPlayIntro({ ...first, sessionSeen: true }), true);
   assert.equal(shouldPlayIntro({ ...first, reducedMotion: true }), false);
   assert.equal(shouldPlayIntro({ ...first, page: 'projects' }), false);
   assert.equal(shouldPlayIntro({ ...first, page: 'contact' }), false);
@@ -83,7 +83,7 @@ test('images that never settle cannot leave the loader blocking the portfolio', 
   assert.equal(timer.pending, 0);
 });
 
-test('skip or an updated reduced-motion preference releases immediately and cancels future work', () => {
+test('early exit releases immediately and cancels future work', () => {
   const { timer, timeline, events } = run();
   timer.advance(800);
   timeline.finish();
@@ -161,19 +161,25 @@ function bootstrap(theme = 'light', storageThrows = false) {
   };
   const window = {
     setTimeout: timer.schedule, clearTimeout: timer.cancel,
+    innerHeight: 720, matchMedia: () => ({ matches: false }),
     addEventListener: (name, callback) => listeners.set(name, callback),
     dispatchEvent() {},
   };
   vm.runInNewContext(source, {
 
-    window, document, Event: class Event {},
+    window, document, location: { pathname: '/', hash: '' }, Event: class Event {},
     localStorage: { getItem() { if (storageThrows) throw new Error('Storage disabled'); return theme; } },
   });
   return { timer, root, fallback, document, mount: () => listeners.get('portfolio:mounted')() };
 }
 
-test('saved dark theme is applied before React starts', () => {
-  assert.equal(bootstrap('dark').document.documentElement.dataset.theme, 'dark');
+test('dark theme and animated opening frame apply before React starts', () => {
+  const fixture = bootstrap('dark');
+  assert.equal(fixture.document.documentElement.dataset.theme, 'dark');
+  assert.equal(fixture.document.documentElement.dataset.boot, 'workflow');
+  const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  assert.equal((html.match(/class="startup-step"/g) || []).length, 4);
+  assert.doesNotMatch(html, /startup-headline|<h1 class="startup-headline"/);
 });
 
 test('missing app bundle shows a usable reload fallback and releases scroll', () => {

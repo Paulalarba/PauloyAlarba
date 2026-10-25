@@ -9,7 +9,6 @@ export default function WorkflowIntro({ onComplete }) {
   const flowRef = useRef(null);
   const brandRef = useRef(null);
   const curtainRef = useRef(null);
-  const skipRef = useRef(null);
   const finishRef = useRef(onComplete);
   const [completed, setCompleted] = useState(0);
   const [ready, setReady] = useState(false);
@@ -61,14 +60,14 @@ export default function WorkflowIntro({ onComplete }) {
         duration: INTRO_TIMING.transition, easing: 'cubic-bezier(.22,1,.36,1)',
       });
       animate(curtainRef.current, [{ opacity: 1 }, { opacity: 0 }], { duration: 480, easing: 'ease-out' });
-      for (const element of [flowRef.current, brandRef.current, skipRef.current]) {
+      for (const element of [flowRef.current, brandRef.current]) {
         animate(element, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: '0 -8px' }], { duration: 300, easing: 'ease-out' });
       }
       if (!titleRef.current.animate) titleRef.current.style.opacity = '0';
     }
 
     measure();
-    skipRef.current?.focus({ preventScroll: true });
+    overlayRef.current.focus({ preventScroll: true });
     timeline = createIntroTimeline({ onNode: setCompleted, onReveal: reveal, onFinish: onComplete });
 
     // Only the opening imagery matters here. A video or a below-fold image must not hold the intro.
@@ -112,8 +111,8 @@ export default function WorkflowIntro({ onComplete }) {
     };
   }, [onComplete]);
 
-  return <div ref={overlayRef} className="workflow-intro" role="dialog" aria-modal="true" aria-label="Paul Alarba portfolio introduction" onKeyDown={event => {
-    if (event.key === 'Tab') { event.preventDefault(); skipRef.current?.focus({ preventScroll: true }); }
+  return <div ref={overlayRef} className="workflow-intro" tabIndex={-1} role="dialog" aria-modal="true" aria-label="Paul Alarba portfolio introduction" onKeyDown={event => {
+    if (event.key === 'Tab') { event.preventDefault(); overlayRef.current?.focus({ preventScroll: true }); }
     if (event.key === 'Escape') { event.preventDefault(); finishRef.current(); }
   }}>
     <div className="intro-curtain" ref={curtainRef} aria-hidden="true" />
@@ -136,6 +135,5 @@ export default function WorkflowIntro({ onComplete }) {
       </div>)}</div>
       <p className={'workflow-status ' + (ready ? 'is-ready' : '')} role="status" aria-live="polite" aria-atomic="true"><span />{ready ? 'Ready to explore' : 'Preparing your portfolio'}</p>
     </div>
-    <button ref={skipRef} className="intro-skip" onClick={() => finishRef.current()}>Skip intro <Icon name="arrow" size={14} /></button>
   </div>;
 }

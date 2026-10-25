@@ -7,7 +7,8 @@ import { renderToStaticMarkup } from 'react-dom/server';
 test('clean paths, legacy links, project details, and Home controls', async () => {
   const server = await createServer({ server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true, include: [] } });
   const location = { origin: 'http://localhost:5173', pathname: '/', search: '', hash: '', href: 'http://localhost:5173/' };
-  globalThis.window = { location, innerHeight: 720, matchMedia: () => ({ matches: true }), history: {
+  let reducedMotion = true;
+  globalThis.window = { location, innerHeight: 720, matchMedia: () => ({ matches: reducedMotion }), history: {
     replaceState(_state, _title, url) {
       const next = new URL(url, location.origin);
       Object.assign(location, { pathname: next.pathname, search: next.search, hash: next.hash, href: next.href });
@@ -26,6 +27,11 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     assert.match(home, /href="\/projects"/);
     assert.match(home, /href="\/contact"/);
     assert.doesNotMatch(home, /tools-toggle|video-control|Pause tools|Pause Bitcoin/);
+    reducedMotion = false;
+    const intro = render();
+    assert.match(intro, /class="workflow-intro"/);
+    assert.doesNotMatch(intro, /Skip intro|intro-skip/);
+    reducedMotion = true;
     for (const page of ['projects', 'expertise', 'about', 'contact']) {
       location.pathname = '/' + page;
       assert.equal(routePage(), page);

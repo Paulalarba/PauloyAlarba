@@ -14,9 +14,27 @@
       html,body{margin:0;background:#f4f4ed;color:#0b1e3f}
       html[data-theme="dark"],html[data-theme="dark"] body{background:#070b14;color:#edf0f6}
       .startup-placeholder,.startup-failure{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;box-sizing:border-box;text-align:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-      .startup-placeholder strong{font-size:12px;letter-spacing:.16em}
-      .startup-placeholder span,.startup-failure p{font-size:13px;opacity:.7}
+      .startup-plain{font-size:13px;opacity:.7}
+      .startup-scene{display:none;width:min(920px,100%)}
+      html[data-boot="workflow"] .startup-scene{display:block}
+      html[data-boot="workflow"] .startup-plain{display:none}
+      .startup-brand{position:absolute;top:clamp(25px,6vh,52px);left:clamp(24px,7vw,80px);display:flex;align-items:center;gap:12px;color:#5a6479;font-size:10px;font-weight:650;letter-spacing:.13em}
+      .startup-brand b{font-size:31px;letter-spacing:-.09em;color:#0b1e3f}.startup-brand b span{color:#0059b3}
+      html[data-theme="dark"] .startup-brand{color:#a2adbf}html[data-theme="dark"] .startup-brand b{color:#edf0f6}html[data-theme="dark"] .startup-brand b span{color:#77b4f1}
+      .startup-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(560px,100%);margin:auto}
+      .startup-step{position:relative;display:flex;justify-content:center}
+      .startup-node{position:relative;z-index:1;display:grid;place-items:center;width:54px;height:54px;border:1.5px solid #c9cbd3;border-radius:13px;background:#fff;animation:startup-node 350ms ease both;animation-delay:calc(var(--step)*420ms + 250ms)}
+      .startup-node:after{content:"";width:12px;height:12px;border:2px solid #5a6479;border-radius:4px;transform:rotate(45deg)}
+      .startup-step:first-child .startup-node{border-radius:28px 13px 13px 28px}
+      html[data-theme="dark"] .startup-node{background:#172233;border-color:#566174}
+      html[data-theme="dark"] .startup-node:after{border-color:#a2adbf}
+      .startup-step:not(:last-child):after{content:"";position:absolute;top:26px;left:calc(50% + 27px);width:calc(100% - 54px);height:2px;background:#b4b7c0;transform:scaleX(0);transform-origin:left;animation:startup-signal 420ms linear both;animation-delay:calc(var(--step)*420ms + 650ms)}
+      @keyframes startup-node{from{opacity:0;transform:translateY(12px);border-color:#c9cbd3}to{opacity:1;transform:translateY(0);border-color:#22a15c}}
+      @keyframes startup-signal{to{background:#22a15c;transform:scaleX(1)}}
       .startup-failure[hidden]{display:none}
+      @media(max-width:540px){.startup-node{width:40px;height:40px}.startup-step:not(:last-child):after{top:19px;left:calc(50% + 20px);width:calc(100% - 40px)}.startup-step{font-size:9px}}
+      @media(prefers-reduced-motion:reduce),(max-height:479px){.startup-scene{display:none!important}.startup-plain{display:block!important}}
+
       .startup-failure h1{font-size:26px}
       .startup-failure a{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:10px 20px;color:inherit;text-decoration:none}
     </style>
@@ -25,6 +43,12 @@
         try {
           document.documentElement.dataset.theme = localStorage.getItem('paul-theme') === 'dark' ? 'dark' : 'light';
           if (document.documentElement.dataset.theme === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content','#070B14');
+        } catch (_) {}
+        try {
+          var route = location.hash.slice(1).split('?')[0];
+          var path = location.pathname.replace(/\/+$/, '');
+          var home = route === 'home' || route === 'top' || (!route && (path === '' || path.endsWith('/index.html')));
+          if (home && window.innerHeight >= 480 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.dataset.boot = 'workflow';
         } catch (_) {}
         var startupTimer = window.setTimeout(function () {
           var fallback = document.getElementById('startup-failure');
@@ -48,7 +72,18 @@
     </script>
   </head>
   <body>
-    <div id="root"><div class="startup-placeholder"><strong>PAUL ALARBA</strong><span>Preparing your portfolio</span></div></div>
+    <div id="root"><div class="startup-placeholder" role="status" aria-label="Loading Paul Alarba's portfolio">
+      <div class="startup-scene" aria-hidden="true">
+        <div class="startup-brand"><b>pa<span>.</span></b></div>
+        <div class="startup-flow">
+          <div class="startup-step" style="--step:0"><span class="startup-node"></span></div>
+          <div class="startup-step" style="--step:1"><span class="startup-node"></span></div>
+          <div class="startup-step" style="--step:2"><span class="startup-node"></span></div>
+          <div class="startup-step" style="--step:3"><span class="startup-node"></span></div>
+        </div>
+      </div>
+      <span class="startup-plain">Opening Paul Alarba's portfolio…</span>
+    </div></div>
     <section class="startup-failure" id="startup-failure" hidden aria-labelledby="startup-failure-title">
       <h1 id="startup-failure-title">Let's try that again.</h1>
       <p>The portfolio could not finish starting. Please reload the page.</p>

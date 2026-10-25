@@ -1,4 +1,3 @@
-export const INTRO_SESSION_KEY = 'paul-portfolio-intro-v1';
 export const INTRO_TIMING = Object.freeze({
   nodeCompletion: [650, 1050, 1500, 1950],
   reveal: 2200,
@@ -12,8 +11,8 @@ export const INTRO_STEPS = [
   { label: 'Connect', icon: 'cube' },
   { label: 'Ready', icon: 'check' },
 ];
-export function shouldPlayIntro({ page, reducedMotion, sessionSeen, viewportHeight = Infinity }) {
-  return page === 'home' && !reducedMotion && !sessionSeen && viewportHeight >= 480;
+export function shouldPlayIntro({ page, reducedMotion, viewportHeight = Infinity }) {
+  return page === 'home' && !reducedMotion && viewportHeight >= 480;
 }
 export function getIntroPlacement(target, viewport) {
   const margin = viewport.width < 540 ? 24 : Math.min(80, viewport.width * 0.07);

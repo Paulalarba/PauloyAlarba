@@ -1,0 +1,126 @@
+.portfolio-hero {
+  --hero-blue: #0755c9;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(6.5rem, 12svh, 8rem) 0 1.5rem;
+  overflow: clip;
+  background: #000;
+  color: #f5f5f5;
+  font-family: 'Geist', 'Inter', sans-serif;
+}
+.portfolio-hero__composition {
+  margin-block: auto;
+  padding-bottom: clamp(1.5rem, 4svh, 3rem);
+}
+.portfolio-hero__visual-wrap { max-width: min(1160px, 110svh); }
+.portfolio-hero__media { position: relative; width: 100%; }
+.portfolio-hero__video-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #000;
+}
+.portfolio-hero__poster,
+.portfolio-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+.portfolio-hero__video { opacity: 0; }
+.portfolio-hero__video.is-ready { opacity: 1; }
+.portfolio-hero__playback {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #ffffff20;
+  border-radius: 999px;
+  background: #080808d9;
+  color: #aaa;
+  font-family: inherit;
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+.portfolio-hero__playback:hover { color: #fff; border-color: #ffffff60; }
+.portfolio-hero__playback:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.portfolio-hero__content { z-index: 1; margin-top: 0.25rem; }
+.portfolio-hero .portfolio-hero__title {
+  margin: 0;
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-size: clamp(3.5rem, 8.6vw, 9rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+}
+.portfolio-hero__title > span { display: inline-block; }
+.portfolio-hero__first-name { color: #f5f5f5; }
+.portfolio-hero__last-name { color: var(--hero-blue); }
+.portfolio-hero__roles {
+  max-width: 1000px;
+  margin: clamp(0.8rem, 1.25vw, 1.2rem) auto 0;
+  color: #f5f5f5;
+  font-size: clamp(1.2rem, 2.05vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.portfolio-hero__roles strong { color: var(--hero-blue); font-weight: 800; white-space: nowrap; }
+.portfolio-hero__scroll {
+  position: relative;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  color: #979797;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.portfolio-hero__scroll:hover { color: #f5f5f5; }
+.portfolio-hero__scroll-line { width: 28px; height: 1px; background: #555; }
+.portfolio-hero a:focus-visible { outline: 2px solid #f5f5f5; outline-offset: 5px; }
+:root { --portfolio-bg: #000; }
+body { background-color: #000; }
+.work-section { padding: 6rem 5% 2rem; background: #000; color: #f4f4f5; border-top: 0; }
+.work-section .about-projects { margin: 0; }
+.work-section .featured-projects-section { padding: 0; }
+@media (max-width: 767px) {
+  .portfolio-hero { padding-top: 6.5rem; padding-bottom: 1.25rem; }
+  .portfolio-hero__composition { padding-bottom: 2rem; }
+  .portfolio-hero__video-stage { aspect-ratio: 16 / 8; }
+  .portfolio-hero__playback { position: relative; right: auto; bottom: auto; margin-top: 0.25rem; margin-bottom: 1rem; }
+  .portfolio-hero__content { margin-top: 0; padding-inline: 1rem; }
+  .portfolio-hero .portfolio-hero__title { font-size: clamp(2.75rem, 12.3vw, 5.6rem); }
+  .portfolio-hero__roles { max-width: 34rem; padding-inline: 0.25rem; }
+  .education-title { white-space: normal; min-width: 0; }
+  .work-section { padding-top: 4.5rem; }
+}
+@media (max-width: 380px) {
+  .portfolio-hero .portfolio-hero__title { font-size: clamp(2.45rem, 12.1vw, 2.9rem); }
+  .portfolio-hero__roles { max-width: 290px; }
+}
+@media (max-height: 560px) and (min-width: 768px) {
+  .portfolio-hero { padding-top: 6rem; }
+  .portfolio-hero__visual-wrap { max-width: 660px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .portfolio-hero__scroll, .portfolio-hero__playback { transition: none; }
+}

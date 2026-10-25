@@ -2,17 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#edf4fa" />
-    <title>Paul Alarba | Portfolio</title>
-    <link rel="icon" href="https://images4.imgbox.com/77/d0/OQFBgnD4_o.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#F4F4ED" />
+    <meta name="description" content="Paul Alarba - Web Developer, Blockchain Developer & AI Automation. Explore projects, technical expertise, and the person behind the code." />
+    <meta property="og:title" content="Paul Alarba - Developer & Builder" />
+    <meta property="og:description" content="Web development, blockchain & AI automation. From curiosity to working code." />
+    <meta property="og:type" content="website" />
+    <title>Paul Alarba - Portfolio</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <style>
+      html,body{margin:0;background:#f4f4ed;color:#0b1e3f}
+      html[data-theme="dark"],html[data-theme="dark"] body{background:#070b14;color:#edf0f6}
+      .startup-placeholder,.startup-failure{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;box-sizing:border-box;text-align:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .startup-placeholder strong{font-size:12px;letter-spacing:.16em}
+      .startup-placeholder span,.startup-failure p{font-size:13px;opacity:.7}
+      .startup-failure[hidden]{display:none}
+      .startup-failure h1{font-size:26px}
+      .startup-failure a{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:10px 20px;color:inherit;text-decoration:none}
+    </style>
+    <script>
+      (function () {
+        try {
+          document.documentElement.dataset.theme = localStorage.getItem('paul-theme') === 'dark' ? 'dark' : 'light';
+          if (document.documentElement.dataset.theme === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content','#070B14');
+        } catch (_) {}
+        var startupTimer = window.setTimeout(function () {
+          var fallback = document.getElementById('startup-failure');
+          var root = document.getElementById('root');
+          if (fallback) {
+            fallback.hidden = false;
+            if (root) root.hidden = true;
+            delete document.documentElement.dataset.intro;
+            document.body.style.overflow = '';
+          }
+        }, 8000);
+        window.addEventListener('portfolio:mounted', function () {
+          window.clearTimeout(startupTimer);
+          var root = document.getElementById('root');
+          var fallback = document.getElementById('startup-failure');
+          if (root) root.hidden = false;
+          if (fallback) fallback.hidden = true;
+          window.dispatchEvent(new Event('resize'));
+        }, {once:true});
+      })();
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="startup-placeholder"><strong>PAUL ALARBA</strong><span>Preparing your portfolio</span></div></div>
+    <section class="startup-failure" id="startup-failure" hidden aria-labelledby="startup-failure-title">
+      <h1 id="startup-failure-title">Let's try that again.</h1>
+      <p>The portfolio could not finish starting. Please reload the page.</p>
+      <a href="">Reload page</a>
+    </section>
+    <noscript><style>#root{display:none}</style><p style="padding:24px;font-family:sans-serif">Please enable JavaScript to explore Paul Alarba's portfolio, or email <a href="mailto:paulnicoralarba@gmail.com">paulnicoralarba@gmail.com</a>.</p></noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

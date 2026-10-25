@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Icon } from './UI.jsx';
 
 const email = 'paulnicoralarba@gmail.com';
 
@@ -30,7 +31,7 @@ export default function ContactForm() {
       </div>
       <div className="contact-field"><label htmlFor="contact-subject">Subject</label><input id="contact-subject" name="subject" autoComplete="off" maxLength="120" required /></div>
       <div className="contact-field"><label htmlFor="contact-message">Message</label><textarea id="contact-message" name="message" rows="6" minLength="10" maxLength="2000" required /></div>
-      <button type="submit" className="contact-submit"><i className="fa-solid fa-paper-plane" aria-hidden="true" /> Send Message</button>
+      <button type="submit" className="contact-submit"><Icon name="external" size={16} /> Open email draft</button>
     </form>
   </>;
 }

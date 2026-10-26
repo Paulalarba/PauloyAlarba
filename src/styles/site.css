@@ -1102,13 +1102,13 @@ a.bento-card:hover {
 
 .project-visual-kamayaral { background:#e7f5ee }
 .project-visual-kamayaral img { object-fit:cover; object-position:center top }
-.project-visual-kamayaral-ai { background:#113b31 }
 .project-visual-educredit { background:radial-gradient(circle at 50% 50%,#f7fffd,#d9eee9) }
-.project-visual-educredit img { max-width:245px; margin:auto }
+.project-visual-educredit img { max-width:640px; margin:auto; transform:scale(1.08) }
+.project-visual-educredit:hover img { transform:translateY(-5px) scale(1.12) }
 .dialog-image-kamayaral { background:#e7f5ee }
 .dialog-image-kamayaral img { object-fit:cover; object-position:center top }
-.dialog-image-kamayaral-ai { background:#113b31 }
 .dialog-image-educredit { background:#e4f3ef }
+.dialog-image-educredit img { transform:scale(1.04) }
 .project-number {
   position:absolute;
   top:16px;

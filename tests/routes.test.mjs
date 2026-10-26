@@ -45,10 +45,9 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     assert.match(services, /href="\/contact"/);
     location.pathname = '/projects';
     const gallery = render();
-    for (const name of ['KamayAral', 'KamayAral AI', 'EduCredit']) assert(gallery.includes(name));
-    assert.equal((gallery.match(/class="project-card"/g) || []).length, 7);
-    location.search = '?project=kamayaral-ai';
-    assert.match(render(), /Six-sign temporal classification baseline/);
+    for (const name of ['KamayAral', 'EduCredit']) assert(gallery.includes(name));
+    assert(!gallery.includes('KamayAral AI'));
+    assert.equal((gallery.match(/class="project-card"/g) || []).length, 6);
     location.pathname = '/projects'; location.search = '?project=sugbogo';
     assert.match(render(), /<dialog/);
     location.pathname = '/'; location.search = ''; location.hash = '#work?project=fittrack';

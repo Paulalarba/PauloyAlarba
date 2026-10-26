@@ -26,8 +26,8 @@ export const skillLogos = {
 };
 export const projects = [
   {
-    id: 'kamayaral', name: 'KamayAral', category: 'FSL learning & accessibility', image: 'ProjectKamayAral.png',
-    imageAlt: 'KamayAral course dashboard design',
+    id: 'kamayaral', name: 'KamayAral', category: 'FSL learning & accessibility', image: 'KamayAral Filipino Sign Language Showcase.png',
+    imageAlt: 'KamayAral Filipino Sign Language platform shown on a laptop and mobile devices',
     summary: 'A Filipino Sign Language learning platform.',
     description: 'An FSL learning and access platform with structured courses, a searchable sign dictionary, and tools for Deaf-led education. It brings learners, teachers, and organizations into one accessible experience.',
     problem: 'Learners need a clear way to study FSL, while Deaf educators need a trusted path to share knowledge and connect with organizations.',

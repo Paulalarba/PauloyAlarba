@@ -24,6 +24,6 @@ export default function HomePage({ introActive = false }) {
         <a className="bento-card about-preview" href={pageHref('about')}><div className="card-heading"><IconTile name="user" /><h2>The person</h2><span className="card-arrow"><Icon name="external" size={18} /></span></div><p>Hi, I’m Paul.<br />Always curious. Always building.</p><div className="about-mini"><div className="about-mini-avatar"><img src={asset('Profile.png')} alt="" /></div><span><strong>University of Cebu</strong><small>Student & developer</small></span></div><span className="location-label"><Icon name="location" size={14} /> Cebu, Philippines</span></a>
       </div>
     </section>
-    <div className="home-bottom"><p><span className="blue-spark"><Icon name="spark" size={17} /></span>Have a role or a project in mind? <a href={pageHref('contact')}>Let’s talk <Icon name="external" size={14} /></a></p><a href={resume} download className="text-link"><Icon name="download" size={16} /> Download résumé</a></div>
+    <div className="home-bottom"><p><span className="blue-spark"><Icon name="spark" size={17} /></span>Have a role or a project in mind? <a href={pageHref('contact')}>Let’s talk <Icon name="external" size={14} /></a></p><a href={resume} target="_blank" rel="noopener noreferrer" className="text-link"><Icon name="download" size={16} /> Download résumé</a></div>
   </div>;
 }

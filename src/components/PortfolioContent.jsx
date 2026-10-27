@@ -1,4 +1,5 @@
 import ContactForm from './ContactForm.jsx';
+import { resume } from '../data/portfolio.js';
 
 export default function PortfolioContent() {
   return (<section id="about" className="about-section">
@@ -16,7 +17,7 @@ export default function PortfolioContent() {
                 playing chess, working out, or relaxing on the beach at Bantayan Island.
             </p>
             <div className="about-social-actions" aria-label="About me links">
-                <a href="/Public/PaulAlarba_resume.pdf" className="about-resume-link" download>
+                <a href={resume} className="about-resume-link" target="_blank" rel="noopener noreferrer">
                     <i className="fa-solid fa-file-arrow-down"></i>
                     Download Resume
                 </a>

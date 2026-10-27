@@ -17,7 +17,7 @@ export default function PortfolioShell({ page, theme, toggleTheme, children }) {
         <a className="social-button" href={'mailto:' + email} aria-label="Email Paul"><Icon name="mail" size={18} /></a>{toggle}
       </div>
       <nav className="side-navigation" aria-label="Main navigation">{pages.map(item => <a key={item.id} href={pageHref(item.id)} className={'side-link ' + (page === item.id ? 'is-active' : '')} aria-current={page === item.id ? 'page' : undefined}><Icon name={item.icon} /><span>{item.label}</span>{page === item.id && <span className="nav-indicator" />}</a>)}</nav>
-      <a className="rail-resume" href={resume} download><Icon name="download" size={18} /><span>Download résumé</span><Icon name="external" size={16} /></a>
+      <a className="rail-resume" href={resume} target="_blank" rel="noopener noreferrer"><Icon name="download" size={18} /><span>Download résumé</span><Icon name="external" size={16} /></a>
       <div className="rail-bottom"><span className="rail-monogram">pa<span>.</span></span><p>Curiosity into code.<br /><span>© {new Date().getFullYear()} Paul Alarba</span></p></div>
     </aside>
     <header className="mobile-header"><a href={pageHref('home')} className="mobile-identity"><img src={asset('Profile.png')} alt="" /><span><strong>Paul Alarba</strong><small>Web · Blockchain · AI</small></span></a>{toggle}</header>

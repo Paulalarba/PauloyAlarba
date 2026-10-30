@@ -18,6 +18,7 @@ export const tools = [
 export const skillLogos = {
   React: 'react', HTML5: 'html5', CSS: 'css', JavaScript: 'javascript',
   'Tailwind CSS': 'tailwindcss', Bootstrap: 'bootstrap',
+  PHP: 'php', 'C#': 'csharp', '.NET': 'dotnet', 'Razor Views': 'dotnet',
   'ASP.NET Core': 'dotnet', 'Entity Framework Core': 'dotnet',
   PostgreSQL: 'postgresql', Solidity: 'solidity', Ethereum: 'ethereum',
   Polkadot: 'polkadot', 'Web3.js': 'web3dotjs', 'Ethers.js': 'ethers',
@@ -78,9 +79,9 @@ export const projects = [
 ];
 export const expertise = [
   { number: '01', icon: 'code', title: 'Web development', subtitle: 'From the interface to the database.', description: 'Responsive interfaces and structured back ends, with an emphasis on clear architecture and practical functionality.', groups: [
-    { title: 'Front end', items: ['React', 'HTML5', 'CSS', 'JavaScript', 'Tailwind CSS', 'Bootstrap'] },
-    { title: 'Back end', items: ['ASP.NET Core', 'Entity Framework Core', 'PostgreSQL'] },
-  ], practices: ['Razor Views', 'SQL Server', 'Clean Architecture', 'Design Systems'] },
+    { title: 'Front end', items: ['React', 'HTML5', 'CSS', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'Razor Views'] },
+    { title: 'Back end', items: ['PHP', 'C#', '.NET', 'ASP.NET Core', 'Entity Framework Core', 'PostgreSQL'] },
+  ], practices: ['SQL Server', 'Clean Architecture', 'Design Systems'] },
   { number: '02', icon: 'cube', title: 'Blockchain development', subtitle: 'Exploring the decentralized web.', description: 'Smart contracts and Web3 development are part of my technical focus, alongside the tools that connect applications to blockchain networks.', groups: [
     { title: 'Contracts & ecosystems', items: ['Solidity', 'Ethereum', 'Polkadot'] },
     { title: 'Development tools', items: ['Web3.js', 'Ethers.js'] },

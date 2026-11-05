@@ -1,0 +1,921 @@
+{
+  "schemaVersion": "1.0.0",
+  "assistantName": "Paul's AI Assistant",
+  "metadata": {
+    "lastReviewed": "2026-11-05",
+    "timezone": "Asia/Manila",
+    "owner": "Paul Alarba",
+    "updateMode": "Manual",
+    "evidenceScope": "Transcribed or summarized from the local portfolio source and its two-page resume. Source presence is not independent verification of experience, software security, outcomes, or live operation.",
+    "publicDeploymentChecked": false,
+    "urlPolicy": "Portfolio links are derived from the existing router and configured domain. Repository and social URLs are copied from current portfolio data; their availability and ownership have not been independently checked.",
+    "sourcePriority": [
+      "Explicit project status and limitations in current portfolio",
+      "Current active portfolio components for contact details and services",
+      "Consistent factual details in the resume",
+      "If unresolved, state that the information is unspecified"
+    ],
+    "sources": [
+      {
+        "id": "resume",
+        "path": "public/Public/PaulAlarba_resume.pdf",
+        "sha256": "7a0255d38c66d91c0b33561c07fb1065a0c6e7bfb98e915acdc7c6539a20a424"
+      },
+      {
+        "id": "src/data/portfolio.js",
+        "path": "src/data/portfolio.js",
+        "sha256": "1138f8514dd451a13056ca3aff5de6a13d358c265ae7b5596562f13b66ad1645"
+      },
+      {
+        "id": "src/data/leadWorkflow.js",
+        "path": "src/data/leadWorkflow.js",
+        "sha256": "5be134b8da1bf2d5d41dd97c0fdac864e24cf071cfab6fa5b848bd21284fb8d7"
+      },
+      {
+        "id": "src/components/PortfolioPages.jsx",
+        "path": "src/components/PortfolioPages.jsx",
+        "sha256": "587c1e5e17e3a79f0716bd53fce2d9d2ba238b1b7de74296c2e7ac9459351c5a"
+      },
+      {
+        "id": "src/components/ServicesPage.jsx",
+        "path": "src/components/ServicesPage.jsx",
+        "sha256": "ec20fb658da3efd1aacfd789fc73bc37aabbfe984032fa7d3fae13275f0c4e19"
+      },
+      {
+        "id": "src/components/ContactForm.jsx",
+        "path": "src/components/ContactForm.jsx",
+        "sha256": "55454c20fd4c3cbcf8d6b438ce78ef9ce4fa131226d69f02b72778b982f6c1c1"
+      },
+      {
+        "id": "src/components/AutomationPage.jsx",
+        "path": "src/components/AutomationPage.jsx",
+        "sha256": "77e09426d01e0cc6d1160d3930d2555a4148f7a68a963d6e7febe0b0e0fcc84a"
+      },
+      {
+        "id": "src/components/PortfolioShell.jsx",
+        "path": "src/components/PortfolioShell.jsx",
+        "sha256": "27dc98dcb63d184ec4195279d2f5f9b1c895e2db1d94ddb5686a12470a5e8b7a"
+      },
+      {
+        "id": "src/routing.js",
+        "path": "src/routing.js",
+        "sha256": "edd8f919c5f580725ee6d9c33f5bf92ba70a8ff44e7917aa857cfa2fae25f4cf"
+      }
+    ]
+  },
+  "profile": {
+    "name": "Paul Alarba",
+    "publicHandle": "@paulalarba",
+    "introduction": "Paul Alarba is a developer and University of Cebu student based in Cebu City, Philippines. His professional interests span web development, blockchain, and AI automation, with a focus on turning complex logic into useful digital systems.",
+    "roles": [
+      "Web Developer",
+      "Blockchain Developer",
+      "AI Automation"
+    ],
+    "resumeHeadline": "Software Engineer & Blockchain|Web3 Engineer",
+    "location": {
+      "city": "Cebu City",
+      "country": "Philippines",
+      "timezone": "Asia/Manila"
+    },
+    "educationSummary": "Student at the University of Cebu Main Campus. The resume describes a Computer Science bachelor's degree in progress.",
+    "academicYear": {
+      "resumeDescription": "Third-year Computer Science student",
+      "freshness": "Resume wording reviewed on 2026-11-05; current academic year should be reconfirmed before asserting it as up to date."
+    },
+    "interests": [
+      "Cooking",
+      "Chess",
+      "Fitness",
+      "Beaches of Bantayan Island"
+    ],
+    "sourceIds": [
+      "resume",
+      "src/components/PortfolioPages.jsx",
+      "src/components/PortfolioShell.jsx"
+    ]
+  },
+  "education": [
+    {
+      "level": "College",
+      "years": "2023 — Present",
+      "school": "University of Cebu Main Campus",
+      "degree": "Bachelor's degree in progress; Computer Science described in resume",
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "level": "Senior High",
+      "years": "2021 — 2023",
+      "school": "College of Technological Science Cebu",
+      "note": "With honor",
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "level": "High School",
+      "years": "2017 — 2021",
+      "school": "Bantayan National High School",
+      "note": "With honor",
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "level": "Elementary",
+      "school": "Tamiao Integrated School",
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "area": "Web development",
+      "description": "Responsive interfaces and structured back ends, with an emphasis on clear architecture and practical functionality.",
+      "groups": [
+        {
+          "title": "Front end",
+          "items": [
+            "React",
+            "HTML5",
+            "CSS",
+            "JavaScript",
+            "Tailwind CSS",
+            "Bootstrap",
+            "Razor Views"
+          ]
+        },
+        {
+          "title": "Back end",
+          "items": [
+            "PHP",
+            "C#",
+            ".NET",
+            "ASP.NET Core",
+            "Entity Framework Core",
+            "PostgreSQL"
+          ]
+        }
+      ],
+      "relatedPractices": [
+        "SQL Server",
+        "Clean Architecture",
+        "Design Systems"
+      ],
+      "evidence": "Listed in the portfolio; no proficiency rating, years of professional experience, or certification is specified.",
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "area": "Blockchain development",
+      "description": "Smart contracts and Web3 development are part of my technical focus, alongside the tools that connect applications to blockchain networks.",
+      "groups": [
+        {
+          "title": "Contracts & ecosystems",
+          "items": [
+            "Solidity",
+            "Ethereum",
+            "Polkadot"
+          ]
+        },
+        {
+          "title": "Development tools",
+          "items": [
+            "Web3.js",
+            "Ethers.js"
+          ]
+        }
+      ],
+      "relatedPractices": [
+        "Substrate",
+        "Hardhat",
+        "Truffle"
+      ],
+      "evidence": "Listed in the portfolio; no proficiency rating, years of professional experience, or certification is specified.",
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "area": "AI automation",
+      "description": "I’m exploring connected workflows, local AI models, and useful automation with human review.",
+      "groups": [
+        {
+          "title": "Automation & data",
+          "items": [
+            "n8n",
+            "Baserow",
+            "Robot Framework"
+          ]
+        },
+        {
+          "title": "Local AI & development",
+          "items": [
+            "Ollama",
+            "DeepSeek-R1",
+            "Codex",
+            "GitHub"
+          ]
+        }
+      ],
+      "relatedPractices": [
+        "Workflow exploration",
+        "Practical automation",
+        "Human review"
+      ],
+      "evidence": "Listed in the portfolio; no proficiency rating, years of professional experience, or certification is specified.",
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "area": "Additional resume tools",
+      "technologies": [
+        "jQuery"
+      ],
+      "sourceIds": [
+        "resume"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "lead-reactivation",
+      "name": "Lead Reactivation Automation",
+      "category": "AI Automation · Customer Follow-up",
+      "purpose": "People inquire, get busy, and disappear. Businesses need a consistent way to revisit permitted past inquiries, manage responses, and coordinate appointments.",
+      "description": "A prototype follow-up process for eligible past inquiries, with business-approved email, AI-assisted reply drafts, human review, and appointment coordination.",
+      "features": [
+        "Import leads with recorded contact permission; exclude unsubscribed contacts, active customers, and existing bookings",
+        "Send business-approved campaign email, with one scheduled follow-up for no reply",
+        "Prepare AI-assisted replies for human review and hand off questions needing business input",
+        "Check availability and create an appointment after confirmation and approval; record attendance after completion"
+      ],
+      "technologies": [
+        "n8n",
+        "PostgreSQL / Supabase",
+        "Ollama",
+        "Brevo",
+        "Gmail",
+        "Google Calendar"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Prototype - Pilot testing",
+        "deployment": "The portfolio contains an interactive simulation with fictional data. The complete live journey is still unverified.",
+        "limitations": [
+          "Do not describe it as a proven live service or production SaaS.",
+          "No measured conversion, booking, or revenue results are approved."
+        ]
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=lead-reactivation",
+        "repository": null,
+        "liveDemo": null,
+        "workflow": "https://paulalarba.xyz/ai-automation"
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "src/data/leadWorkflow.js",
+        "src/components/AutomationPage.jsx"
+      ],
+      "controls": [
+        "Use past inquiries with recorded contact permission.",
+        "Exclude unsubscribed contacts, active customers, and existing bookings.",
+        "Business approves campaign content; a person reviews AI-assisted replies before sending.",
+        "The illustrated process includes one scheduled follow-up for no reply; opt-outs stop outreach.",
+        "Check and re-check calendar availability; appointments require confirmation and staff approval.",
+        "Record attendance after completion; attendance is not evidence of a sale."
+      ]
+    },
+    {
+      "id": "kamayaral",
+      "name": "KamayAral",
+      "category": "FSL learning & accessibility",
+      "purpose": "Learners need a clear way to study FSL, while Deaf educators need a trusted path to share knowledge and connect with organizations.",
+      "description": "An FSL learning and access platform with structured courses, a searchable sign dictionary, and tools for Deaf-led education. It brings learners, teachers, and organizations into one accessible experience.",
+      "features": [
+        "Structured courses, lessons, quizzes, and progress tracking",
+        "Sign dictionary and accessible learning materials",
+        "Teacher tools and workshop request workflows"
+      ],
+      "technologies": [
+        "ASP.NET Core 10",
+        "C#",
+        "Razor Views",
+        "EF Core",
+        "PostgreSQL"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Showcased project",
+        "deployment": "Listed in the portfolio and resume. Current deployment, completion stage, and public demo availability are unspecified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=kamayaral",
+        "repository": "https://github.com/Paulalarba/KamayAral",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "educredit",
+      "name": "EduCredit",
+      "category": "Campus payments & credit",
+      "purpose": "Campus spending and short-term credit need a coordinated process for identity checks, transactions, repayments, and vendor operations.",
+      "description": "A campus platform connecting students, vendors, and administrators. Students can manage credit and repayments, vendors handle their product catalog and QR payments, and administrators oversee accreditation and limits.",
+      "features": [
+        "Student KYC and credit limit management",
+        "Session-based QR payment and vendor confirmation",
+        "Repayment tracking, health scoring, and spending analytics"
+      ],
+      "technologies": [
+        "ASP.NET Core 10",
+        "C#",
+        "EF Core",
+        "PostgreSQL",
+        "Razor Views"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Showcased project",
+        "deployment": "Listed in the portfolio and resume. Current deployment, completion stage, and public demo availability are unspecified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=educredit",
+        "repository": "https://github.com/Paulalarba/EduCredit",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sugbogo",
+      "name": "SugboGo",
+      "category": "Travel & discovery",
+      "purpose": "Travelers need a simpler way to discover destinations, while local partners and administrators need a coordinated way to manage bookings and operations.",
+      "description": "A Cebu travel ecosystem connecting explorers, local partners, and administrators. Vibe-based destination discovery brings the right places closer, while booking and operational tools keep the journey organized.",
+      "features": [
+        "Vibe-based destination discovery and personalized booking",
+        "Partner assignment tracking and QR traveler verification",
+        "An administration command center for spots, bookings, and operations"
+      ],
+      "technologies": [
+        "C# 13",
+        "ASP.NET Core 10",
+        "PostgreSQL",
+        "Supabase",
+        "RBAC"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Showcased project",
+        "deployment": "Listed in the portfolio and resume. Current deployment, completion stage, and public demo availability are unspecified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=sugbogo",
+        "repository": "https://github.com/Paulalarba/SugboGo",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "fittrack",
+      "name": "FitTrack",
+      "category": "Membership & operations",
+      "purpose": "Gym memberships, entry verification, and account balances need to work together without fragmented manual tracking.",
+      "description": "A gym operations system with member portals, administrator dashboards, QR check-ins, and a wallet ledger. Members can manage accounts while staff verify access in real time.",
+      "features": [
+        "QR check-ins and real-time access verification",
+        "Wallet funding, balance transfers, and membership renewal",
+        "Member profiles and administrative dashboards"
+      ],
+      "technologies": [
+        "ASP.NET Core 10",
+        "EF Core 10",
+        "Identity",
+        "Data Protection API",
+        "QR Security"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Resume-reported gym deployment",
+        "deployment": "The resume states that FitTrack was deployed in a gym. Current operation, client identity, usage, and performance have not been independently verified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=fittrack",
+        "repository": "https://github.com/Paulalarba/FitTrack-",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sitin",
+      "name": "UC CCS Sit-In",
+      "category": "Education & real-time systems",
+      "purpose": "Students need visibility into laboratory access, and administrators need current information about reservations, computers, and active sessions.",
+      "description": "A laboratory management system for student reservations, active sit-in sessions, and real-time occupancy tracking. Students can book seats while administrators manage laboratory activity from one place.",
+      "features": [
+        "Student seat reservations and approval management",
+        "Real-time occupancy tracking and live session updates",
+        "Laboratory PC management, announcements, and reports"
+      ],
+      "technologies": [
+        ".NET 10",
+        "SignalR",
+        "PostgreSQL",
+        "Identity",
+        "Seat Reservation"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Showcased project",
+        "deployment": "Listed in the portfolio and resume. Current deployment, completion stage, and public demo availability are unspecified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=sitin",
+        "repository": "https://github.com/Paulalarba/UcCcsSitIn",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sportsstore",
+      "name": "SportsStore",
+      "category": "E-commerce",
+      "purpose": "An online store needs a consistent shopping flow that keeps cart state and persists orders reliably.",
+      "description": "An online retail prototype demonstrating a complete product browsing, cart, and checkout workflow, with server-side session state and Entity Framework persistence.",
+      "features": [
+        "Product browsing and cart management",
+        "Database-backed checkout with Entity Framework",
+        "Server-side session state and repository-based organization"
+      ],
+      "technologies": [
+        "ASP.NET Core MVC",
+        "EF Core",
+        "SQL Server",
+        "Session State",
+        "Repository Pattern"
+      ],
+      "contribution": {
+        "summary": "Presented as part of Paul's project portfolio.",
+        "specificResponsibilities": null,
+        "teamSize": null,
+        "soleAuthorshipConfirmed": false,
+        "answerGuidance": "Explain the documented system features. The sources do not specify an individual task breakdown; do not claim Paul personally implemented every feature or worked alone."
+      },
+      "status": {
+        "label": "Online retail prototype",
+        "deployment": "Showcased in the portfolio and resume; current public demo uptime is not verified."
+      },
+      "links": {
+        "portfolio": "https://paulalarba.xyz/projects?project=sportsstore",
+        "repository": "https://github.com/Paulalarba/SportsStore",
+        "liveDemo": null
+      },
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Websites",
+      "description": "A clear, responsive home for your business. Built to explain what you do and help people get in touch.",
+      "technologies": [
+        "HTML5",
+        "CSS",
+        "JavaScript"
+      ],
+      "inquiryUrl": "https://paulalarba.xyz/contact",
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    },
+    {
+      "name": "Web applications",
+      "description": "Custom portals, dashboards, and everyday tools that bring your team, accounts, and data together.",
+      "technologies": [
+        "React",
+        "ASP.NET Core",
+        "PostgreSQL"
+      ],
+      "inquiryUrl": "https://paulalarba.xyz/contact",
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    },
+    {
+      "name": "Connected workflows",
+      "description": "Connect forms, records, and notifications to keep work moving with fewer manual steps.",
+      "technologies": [
+        "n8n",
+        "PostgreSQL",
+        "ASP.NET Core"
+      ],
+      "inquiryUrl": "https://paulalarba.xyz/contact",
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    },
+    {
+      "name": "Blockchain prototypes",
+      "description": "Test a Web3 idea with a usable interface and the smart contract foundations to support it.",
+      "technologies": [
+        "Solidity",
+        "Ethereum",
+        "Ethers.js"
+      ],
+      "inquiryUrl": "https://paulalarba.xyz/contact",
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    },
+    {
+      "name": "AI-assisted tools",
+      "description": "Put AI to work on drafts, questions, and repetitive tasks, with your team in control of the decisions.",
+      "technologies": [
+        "Ollama",
+        "Codex",
+        "React"
+      ],
+      "inquiryUrl": "https://paulalarba.xyz/contact",
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    }
+  ],
+  "workingProcess": {
+    "steps": [
+      {
+        "name": "Understand",
+        "description": "Define the problem, people, and a useful first outcome."
+      },
+      {
+        "name": "Build",
+        "description": "Turn the agreed scope into a working interface and workflow."
+      },
+      {
+        "name": "Improve",
+        "description": "Test with real use, refine the details, and plan next steps."
+      }
+    ],
+    "sourceIds": [
+      "src/components/ServicesPage.jsx"
+    ]
+  },
+  "contact": {
+    "email": "paulnicoralarba@gmail.com",
+    "emailUrl": "mailto:paulnicoralarba@gmail.com",
+    "contactPage": "https://paulalarba.xyz/contact",
+    "github": "https://github.com/Paulalarba",
+    "linkedin": "https://www.linkedin.com/in/paul-alarba",
+    "x": "https://x.com/paulalarba",
+    "formBehavior": "The Contact form opens the visitor's email app with a prefilled draft. The visitor must send it; the site does not itself submit that message to Paul.",
+    "phone": null,
+    "officeAddress": null,
+    "responseTime": null,
+    "sourceIds": [
+      "src/data/portfolio.js",
+      "src/components/ContactForm.jsx",
+      "src/components/PortfolioPages.jsx"
+    ]
+  },
+  "links": {
+    "home": "https://paulalarba.xyz/",
+    "about": "https://paulalarba.xyz/about",
+    "projects": "https://paulalarba.xyz/projects",
+    "services": "https://paulalarba.xyz/services",
+    "expertise": "https://paulalarba.xyz/expertise",
+    "automation": "https://paulalarba.xyz/ai-automation",
+    "contact": "https://paulalarba.xyz/contact",
+    "resume": "https://paulalarba.xyz/Public/PaulAlarba_resume.pdf",
+    "github": "https://github.com/Paulalarba",
+    "linkedin": "https://www.linkedin.com/in/paul-alarba",
+    "x": "https://x.com/paulalarba"
+  },
+  "businessTerms": {
+    "pricing": null,
+    "hourlyRate": null,
+    "currentAvailability": null,
+    "deliveryTimelines": null,
+    "paymentTerms": null,
+    "supportCommitments": null,
+    "hiringPreferences": null,
+    "guidance": "Invite the visitor to contact Paul to discuss scope, pricing, availability, timelines, and terms. Do not infer them from services offered."
+  },
+  "faq": [
+    {
+      "id": "introduction",
+      "question": "Who is Paul Alarba?",
+      "answer": "Paul is a developer and University of Cebu student based in Cebu City, Philippines. His work and interests cover web development, blockchain, and AI automation.",
+      "links": [
+        "https://paulalarba.xyz/about"
+      ],
+      "sourceIds": [
+        "resume",
+        "src/components/PortfolioPages.jsx"
+      ]
+    },
+    {
+      "id": "skills",
+      "question": "What technologies does Paul use?",
+      "answer": "His listed web toolkit includes React, HTML, CSS, JavaScript, Tailwind CSS, PHP, C#, ASP.NET Core, Razor Views, Entity Framework Core, PostgreSQL, and SQL Server. He also lists blockchain and AI automation tools.",
+      "links": [
+        "https://paulalarba.xyz/expertise"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "id": "projects",
+      "question": "What has Paul worked on?",
+      "answer": "His portfolio showcases EduCredit, KamayAral, FitTrack, SugboGo, UC CCS Sit-In, SportsStore, and a Lead Reactivation Automation prototype.",
+      "links": [
+        "https://paulalarba.xyz/projects"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "id": "educredit",
+      "question": "What is EduCredit?",
+      "answer": "EduCredit is a campus payments and credit platform for students, vendors, and administrators. Its documented features include identity checks, credit management, QR payments, and repayment tracking.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=educredit"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "kamayaral",
+      "question": "What is KamayAral?",
+      "answer": "KamayAral is a Filipino Sign Language learning platform with structured courses, quizzes, progress tracking, a sign dictionary, teacher tools, and workshop request workflows.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=kamayaral"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "fittrack",
+      "question": "What is FitTrack?",
+      "answer": "FitTrack is a gym membership and wallet system with member portals, administrator dashboards, QR check-ins, account funding, transfers, and renewals. Paul's resume states it was deployed in a gym; its current operation is not verified here.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=fittrack"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sugbogo",
+      "question": "What is SugboGo?",
+      "answer": "SugboGo is a Cebu travel platform connecting explorers, local partners, and administrators through destination discovery, booking, partner assignment tracking, and QR traveler verification.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=sugbogo"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sitin",
+      "question": "What is UC CCS Sit-In?",
+      "answer": "UC CCS Sit-In is a laboratory management system for student seat reservations, approval workflows, laboratory PCs, reports, and real-time session and occupancy updates using SignalR.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=sitin"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "sportsstore",
+      "question": "What is SportsStore?",
+      "answer": "SportsStore is an online retail prototype demonstrating product browsing, cart management, server-side session state, and database-backed checkout using ASP.NET Core MVC and Entity Framework Core.",
+      "links": [
+        "https://paulalarba.xyz/projects?project=sportsstore"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "automation-status",
+      "question": "Is the Lead Reactivation Automation live?",
+      "answer": "It is a prototype in pilot testing. The portfolio walkthrough uses fictional data, and the complete live journey is still unverified. It illustrates eligible-lead follow-up, AI-assisted drafts, human review, and appointment coordination.",
+      "links": [
+        "https://paulalarba.xyz/ai-automation"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "src/components/AutomationPage.jsx"
+      ]
+    },
+    {
+      "id": "services",
+      "question": "What services does Paul offer?",
+      "answer": "His portfolio lists websites, web applications, connected workflows, blockchain prototypes, and AI-assisted tools. Contact Paul to discuss which approach fits your project.",
+      "links": [
+        "https://paulalarba.xyz/services",
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": [
+        "src/components/ServicesPage.jsx"
+      ]
+    },
+    {
+      "id": "contribution",
+      "question": "Did Paul build every part of these projects himself?",
+      "answer": "The projects are presented in Paul's portfolio, but the available information does not document a precise individual contribution breakdown or confirm sole authorship. Contact Paul for details about his role in a specific project.",
+      "links": [
+        "https://paulalarba.xyz/projects",
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "resume",
+      "question": "Where can I view Paul's resume?",
+      "answer": "You can open Paul's resume PDF using the resume link.",
+      "links": [
+        "https://paulalarba.xyz/Public/PaulAlarba_resume.pdf"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js"
+      ]
+    },
+    {
+      "id": "contact",
+      "question": "How can I contact Paul?",
+      "answer": "Email Paul at paulnicoralarba@gmail.com or visit his Contact page. Its form opens an email draft for you to send.",
+      "links": [
+        "https://paulalarba.xyz/contact",
+        "mailto:paulnicoralarba@gmail.com"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "src/components/ContactForm.jsx"
+      ]
+    },
+    {
+      "id": "pricing",
+      "question": "How much does Paul charge?",
+      "answer": "Paul has not published approved pricing in this knowledge file. Contact him with your project goals and scope to discuss a quote.",
+      "links": [
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "availability",
+      "question": "Is Paul available for work right now?",
+      "answer": "Paul's current availability is not specified here. Contact him directly to confirm availability and discuss your project or role.",
+      "links": [
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "timeline",
+      "question": "How long will my project take?",
+      "answer": "An approved delivery timeline is not available here. Paul would need to review your requirements and scope before discussing a schedule.",
+      "links": [
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "education",
+      "question": "Where does Paul study?",
+      "answer": "The portfolio and resume list the University of Cebu Main Campus, with study beginning in 2023. The resume describes a Computer Science degree in progress; current academic standing should be confirmed with Paul.",
+      "links": [
+        "https://paulalarba.xyz/about",
+        "https://paulalarba.xyz/Public/PaulAlarba_resume.pdf"
+      ],
+      "sourceIds": [
+        "src/data/portfolio.js",
+        "resume"
+      ]
+    },
+    {
+      "id": "book",
+      "question": "Can you book a meeting or send Paul my message?",
+      "answer": "I can point you to Paul's Contact page or email address. This assistant cannot send messages, book meetings, or confirm appointments.",
+      "links": [
+        "https://paulalarba.xyz/contact"
+      ],
+      "sourceIds": [
+        "src/components/ContactForm.jsx"
+      ]
+    }
+  ],
+  "unknowns": [
+    "Exact individual contribution and team size for each project",
+    "Current deployment and completion stage where not explicitly documented",
+    "Confirmed current academic year or graduation date",
+    "Paid employment history, employers, certifications, and years of professional experience",
+    "Pricing, availability, delivery schedules, and contractual terms",
+    "Independent measurement evidence for numerical results in the resume",
+    "Public live demo URLs and current uptime"
+  ],
+  "answerBoundaries": {
+    "allowedTopics": [
+      "Public professional background",
+      "Listed skills and education",
+      "Documented project purposes, features, technologies, and limitations",
+      "Listed services and working process",
+      "Published professional contact details and links",
+      "Public interests when asked"
+    ],
+    "unsupportedClaims": [
+      "Guaranteed outcomes or security",
+      "Unverified quantitative metrics",
+      "Sole authorship or specific implementation responsibilities",
+      "Undocumented employers, certifications, customers, or credentials",
+      "Production readiness inferred from a GitHub link or portfolio listing"
+    ],
+    "toolCapabilities": {
+      "sendsEmail": false,
+      "booksMeetings": false,
+      "checksCalendar": false,
+      "checksCurrentAvailability": false,
+      "browsesInternet": false
+    },
+    "fallback": "I don't have that information in Paul's approved portfolio knowledge. Please contact Paul directly for an accurate answer.",
+    "unrelated": "I can help with Paul's background, projects, skills, and services. What would you like to know about his work?"
+  }
+}

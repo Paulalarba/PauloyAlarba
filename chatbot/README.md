@@ -1,12 +1,12 @@
 # Paul's portfolio assistant knowledge
 
-Prepared on 2026-11-05 from the local portfolio source and both pages of the bundled resume. The Worker backend has been deployed and its production health check verified. Turnstile configuration is still required before chat requests are accepted, and no portfolio chat interface has been activated. See `DEPLOY.md` for setup.
+Prepared on 2026-11-05 from the local portfolio source and both pages of the bundled resume. The package now includes a deployable Worker backend. It has not been deployed, and no chat interface has been activated. See `DEPLOY.md` for setup.
 
 ## Files
 
 - `paul-knowledge.json`: structured profile, education, skills, seven projects, five services, links, contact details, 19 FAQs, unknowns, source hashes, and answer boundaries.
 - `system-prompt.md`: assistant identity, answer style, grounding rules, project limitations, and example answers.
-- `worker.js`: generated, self-contained backend to paste into the Cloudflare entry file of the same name. `worker.mjs` is an identical bundle for local tests and CLI deployment.
+- `worker.mjs`: generated, self-contained backend to paste into Cloudflare's Worker editor.
 - `worker-runtime.mjs` and `build-worker.mjs`: maintainable backend source and its packaging command.
 - `worker.test.mjs`: backend checks using mocked AI and Turnstile verification.
 - `wrangler.jsonc`: optional CLI deployment configuration with native rate limiting.
@@ -15,7 +15,15 @@ Prepared on 2026-11-05 from the local portfolio source and both pages of the bun
 These files live outside `public` and are not imported by the React application. They are intended to be bundled with the future server-side Worker. The JSON contains public information only. No API credentials belong in either file.
 
 ## Evidence and review decisions
-
+build-worker.mjs
+DEPLOY.md
+paul-knowledege.json
+README.md
+system-prompt.md
+worker-runtime.mjs
+worker.mjs
+worker.test.mjs
+wrangler.jsonc
 Facts were checked against the local source files identified in `metadata.sources`, including `public/Public/PaulAlarba_resume.pdf`. The public website could not be retrieved through the web reader during preparation. Links follow the project's router and configured domain, but external account ownership, repository visibility, public deployments, and uptime were not independently verified. Source hashes identify the exact snapshot reviewed; they are not proof of the underlying claims.
 
 | Item | Source difference or limitation | Treatment |

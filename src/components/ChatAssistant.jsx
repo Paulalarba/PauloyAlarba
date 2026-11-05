@@ -76,6 +76,7 @@ export default function ChatAssistant() {
       if (!active) return;
       widget.current = api.render(challenge.current, {
         sitekey: SITE_KEY, action: 'portfolio-chat', theme: 'auto', size: 'flexible',
+        appearance: 'interaction-only',
         callback: value => { if (active) { setToken(value); setVerificationError(''); } },
         'expired-callback': () => { if (active) { setToken(''); api.reset(widget.current); } },
         'error-callback': () => { if (active) { setToken(''); setVerificationError('Verification failed. Try the check again or contact Paul.'); } },

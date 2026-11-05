@@ -2012,41 +2012,37 @@ a.bento-card:hover {
     align-items:center;
     justify-content:center;
     gap:3px;
-    width:20%;
+      flex:1;
+      min-width:0;
     height:100%;
     border-radius:999px;
     color:var(--muted);
     transition:background .2s,color .2s
   }
   .dock-link>span {
-    display:inline-flex
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:24px;
+      height:24px;
+      flex-shrink:0
   }
   .dock-link small {
-    font-size:9px
+      font-size:clamp(7px,1.8vw,9px);
+      white-space:nowrap
   }
   .dock-link.is-active {
     background:var(--active);
     color:var(--blue)
   }
   .dock-contact>span {
-    background:#0059b3;
-    color:#fff;
-    height:46px;
-    width:46px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    box-shadow:0 5px 12px #0059b330;
-    margin-top:-22px;
-    border:4px solid var(--paper);
-    box-sizing:content-box
+      color:var(--blue)
   }
   .dock-contact small {
     margin-top:0
   }
   .dock-contact.is-active {
-    background:transparent
+      background:var(--active)
   }
   .page-heading h1 {
     font-size:36px

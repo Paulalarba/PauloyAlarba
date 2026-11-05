@@ -7,4 +7,3 @@
 .automation-principles h2 { font-size:18px; margin:14px 0 8px; }
 .automation-principles p { color:var(--muted); font-size:14px; line-height:1.7; }
 @media(max-width:700px) { .automation-frame { height:730px; } .automation-principles { grid-template-columns:1fr; gap:0; } .automation-caption { font-size:11px; } }
-@media(max-width:900px) { .mobile-dock .dock-link { width:auto; flex:1; min-width:0; } .mobile-dock .dock-link small { font-size:8px; white-space:nowrap; } }

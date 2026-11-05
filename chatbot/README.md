@@ -1,11 +1,16 @@
 # Paul's portfolio assistant knowledge
 
-Prepared on 2026-11-05 from the local portfolio source and both pages of the bundled resume. This is a content package for the future chatbot; it does not activate a chat interface or deploy an AI endpoint.
+Prepared on 2026-11-05 from the local portfolio source and both pages of the bundled resume. The Worker backend has been deployed and its production health check verified. Turnstile configuration is still required before chat requests are accepted, and no portfolio chat interface has been activated. See `DEPLOY.md` for setup.
 
 ## Files
 
 - `paul-knowledge.json`: structured profile, education, skills, seven projects, five services, links, contact details, 19 FAQs, unknowns, source hashes, and answer boundaries.
 - `system-prompt.md`: assistant identity, answer style, grounding rules, project limitations, and example answers.
+- `worker.js`: generated, self-contained backend to paste into the Cloudflare entry file of the same name. `worker.mjs` is an identical bundle for local tests and CLI deployment.
+- `worker-runtime.mjs` and `build-worker.mjs`: maintainable backend source and its packaging command.
+- `worker.test.mjs`: backend checks using mocked AI and Turnstile verification.
+- `wrangler.jsonc`: optional CLI deployment configuration with native rate limiting.
+- `DEPLOY.md`: dashboard instructions, bot protection setup, and the chat request contract.
 
 These files live outside `public` and are not imported by the React application. They are intended to be bundled with the future server-side Worker. The JSON contains public information only. No API credentials belong in either file.
 

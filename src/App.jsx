@@ -5,6 +5,7 @@ import ServicesPage from './components/ServicesPage.jsx';
 import AutomationPage from './components/AutomationPage.jsx';
 import WorkflowIntro from './components/WorkflowIntro.jsx';
 import CursorRing from './components/CursorRing.jsx';
+import ChatAssistant from './components/ChatAssistant.jsx';
 import { ProjectsPage, ExpertisePage, AboutPage, ContactPage } from './components/PortfolioPages.jsx';
 import { shouldPlayIntro } from './components/intro/introModel.js';
 import { pages } from './data/portfolio.js';
@@ -73,6 +74,7 @@ export default function App() {
           <footer className="page-footer"><span>Thoughtfully built. Always learning.</span><span>&copy; {new Date().getFullYear()} Paul Alarba</span></footer>
         </main>
       </PortfolioShell>
+      <ChatAssistant />
     </div>
     {introActive && <WorkflowIntro onComplete={completeIntro} />}
     <CursorRing />

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { resume } from '../data/portfolio.js';
+import PaulAssistantMascot from './PaulAssistantMascot.jsx';
 import { boundedHistory, CHAT_URL, loadTurnstile, retrySeconds, SITE_KEY } from './chat-client.js';
 import '../styles/chat.css';
 
@@ -153,6 +154,6 @@ export default function ChatAssistant() {
         <div className="chat-form-note"><span>{cooldown ? `Please wait ${cooldown}s before sending.` : 'Enter to send · Shift + Enter for a new line'}</span><span>{draft.length}/1000</span></div>
       </form>
     </section>}
-    <button ref={launcher} className="chat-launcher" type="button" aria-expanded={open} aria-controls="paul-chat-panel" onClick={() => open ? close() : setOpen(true)}><span aria-hidden="true">✦</span><span>{open ? 'Close assistant' : 'Ask about Paul'}</span></button>
+    <PaulAssistantMascot buttonRef={launcher} state={pending ? 'thinking' : open ? 'greeting' : 'idle'} expanded={open} onClick={() => open ? close() : setOpen(true)} />
   </div>;
 }

@@ -4,6 +4,7 @@ export const email = 'paulnicoralarba@gmail.com';
 export const social = { github: 'https://github.com/Paulalarba', linkedin: 'https://www.linkedin.com/in/paul-alarba', x: 'https://x.com/paulalarba' };
 export const pages = [
   { id: 'home', label: 'Home', icon: 'home' }, { id: 'projects', label: 'Projects', icon: 'work' }, { id: 'services', label: 'Services', icon: 'spark' },
+  { id: 'ai-automation', label: 'AI Automation', icon: 'layers' },
   { id: 'expertise', label: 'Expertise', icon: 'layers' }, { id: 'about', label: 'About', icon: 'user' }, { id: 'contact', label: 'Contact', icon: 'mail' },
 ];
 export const logo = name => import.meta.env.BASE_URL + 'logos/' + name + '.svg';
@@ -26,6 +27,18 @@ export const skillLogos = {
   'DeepSeek-R1': 'deepseek', Baserow: 'baserow', 'Robot Framework': 'robotframework',
 };
 export const projects = [
+  {
+    id: 'lead-reactivation', name: 'Lead Reactivation Automation', category: 'AI Automation · Customer Follow-up',
+    previewImage: 'workflow-preview.svg', imageAlt: 'Illustrated lead reactivation workflow: import leads, check eligibility, send approved email, review replies, and book an appointment',
+    summary: 'Reconnect with eligible past inquiries while keeping your team in control. Prototype · Pilot testing.',
+    description: 'A prototype follow-up process for eligible past inquiries, with business-approved email, AI-assisted reply drafts, human review, and appointment coordination.',
+    problem: 'People inquire, get busy, and disappear. Businesses need a consistent way to revisit permitted past inquiries, manage responses, and coordinate appointments.',
+    features: ['Import leads with recorded contact permission; exclude unsubscribed contacts, active customers, and existing bookings', 'Send business-approved campaign email, with one scheduled follow-up for no reply', 'Prepare AI-assisted replies for human review and hand off questions needing business input', 'Check availability and create an appointment after confirmation and approval; record attendance after completion'],
+    controls: 'Your business approves campaign content. A person reviews AI-assisted responses before sending. Opt-outs stop outreach, and appointments require confirmation and staff approval.',
+    status: 'Prototype · Pilot testing. The complete live journey is still unverified. The illustrated workflow describes the prototype process, without measured conversion or revenue claims.',
+    tech: ['n8n', 'PostgreSQL / Supabase', 'Ollama', 'Brevo', 'Gmail', 'Google Calendar'],
+    contactAction: 'Discuss a similar system',
+  },
   {
     id: 'kamayaral', name: 'KamayAral', category: 'FSL learning & accessibility', image: 'KamayAral Filipino Sign Language Showcase.png',
     imageAlt: 'KamayAral Filipino Sign Language platform shown on a laptop and mobile devices',

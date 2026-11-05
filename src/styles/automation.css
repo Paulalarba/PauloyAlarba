@@ -1,0 +1,10 @@
+.automation-caption { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; color:var(--muted); font-size:12px; margin:20px 0; }
+.automation-caption p { margin:0; max-width:620px; }
+.automation-frame { display:block; width:100%; height:800px; border:1px solid var(--line); border-radius:20px; background:#161616; box-shadow:0 20px 70px #00000018; }
+.automation-principles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:40px 0; }
+.automation-principles article { border-top:1px solid var(--line); padding:24px 0; }
+.automation-principles article>span { color:var(--blue); font-size:12px; }
+.automation-principles h2 { font-size:18px; margin:14px 0 8px; }
+.automation-principles p { color:var(--muted); font-size:14px; line-height:1.7; }
+@media(max-width:700px) { .automation-frame { height:730px; } .automation-principles { grid-template-columns:1fr; gap:0; } .automation-caption { font-size:11px; } }
+@media(max-width:900px) { .mobile-dock .dock-link { width:auto; flex:1; min-width:0; } .mobile-dock .dock-link small { font-size:8px; white-space:nowrap; } }

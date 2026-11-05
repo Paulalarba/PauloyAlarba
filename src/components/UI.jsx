@@ -1,6 +1,9 @@
 import { Fragment, useState } from 'react';
 import { asset } from '../data/portfolio.js';
 const paths = {
+  calendar: 'M4 5h16v16H4ZM8 3v4m8-4v4M4 10h16m-11 4h2m3 0h2m-7 3h2',
+  clock: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM12 7v5l3 2',
+  replay: 'M3 10a9 9 0 1 1 1 7M3 4v6h6',
   home: 'm3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z',
   work: 'M8 6V4h8v2M3 7h18v13H3ZM3 12c5 3 13 3 18 0M10 13h4',
   layers: 'm12 3 10 5-10 5L2 8Zm-9 9 9 5 9-5M3 16l9 5 9-5',
@@ -26,7 +29,7 @@ export function PageHeading({ eyebrow, title, titleId, description, children }) 
 export function ProjectImage({ project, ...props }) {
   const [failed, setFailed] = useState(false);
   if (failed) return <div className="image-placeholder"><Icon name="code" size={36} /><span>{project.name}</span></div>;
-  return <img src={project.remoteImage || asset(project.image)} alt={project.imageAlt || project.name + ' project interface'} loading="lazy" {...props} onError={() => setFailed(true)} />;
+  return <img src={project.previewImage ? import.meta.env.BASE_URL + project.previewImage : project.remoteImage || asset(project.image)} alt={project.imageAlt || project.name + ' project interface'} loading="lazy" {...props} onError={() => setFailed(true)} />;
 }
 
 export function HomeHeadline() {

@@ -33,21 +33,34 @@ test('clean paths, legacy links, project details, and Home controls', async () =
     assert.match(intro, /class="workflow-intro"/);
     assert.doesNotMatch(intro, /Skip intro|intro-skip/);
     reducedMotion = true;
-    for (const page of ['projects', 'services', 'expertise', 'about', 'contact']) {
+    for (const page of ['projects', 'services', 'ai-automation', 'expertise', 'about', 'contact']) {
       location.pathname = '/' + page;
       assert.equal(routePage(), page);
       assert.match(render(), new RegExp('href="/' + page + '"[^>]+aria-current="page"'));
     }
     location.pathname = '/services';
     const services = render();
-    for (const title of ['Understand. Build. Improve.', 'Websites', 'Web applications', 'Connected workflows', 'Blockchain prototypes', 'AI-assisted tools', 'One request. A clearer next step.']) assert(services.includes(title));
+    for (const title of ['Understand. Build. Improve.', 'Websites', 'Web applications', 'Connected workflows', 'Blockchain prototypes', 'AI-assisted tools', 'Your old inquiries', 'deserve a follow-up.', 'Lead Reactivation Workflow', 'Illustrative walkthrough']) assert(services.includes(title));
     assert.equal((services.match(/class="service-card"/g) || []).length, 5);
     assert.match(services, /href="\/contact"/);
+    location.pathname = '/ai-automation';
+    const workflow = render();
+    assert.match(workflow, /ai-outbox-automation\.html/);
+    assert.match(workflow, /Interactive simulation/);
+    assert.match(workflow, /Live|live journey is still unverified/);
     location.pathname = '/projects';
     const gallery = render();
     for (const name of ['KamayAral', 'EduCredit']) assert(gallery.includes(name));
     assert(!gallery.includes('KamayAral AI'));
-    assert.equal((gallery.match(/class="project-card"/g) || []).length, 6);
+    assert.equal((gallery.match(/class="project-card"/g) || []).length, 7);
+    location.pathname = '/projects'; location.search = '?project=lead-reactivation';
+    const automation = render();
+    assert.match(automation, /<dialog/);
+    assert.match(automation, /Discuss a similar system/);
+    assert.match(automation, /Approval and opt-out controls/);
+    assert.match(automation, /complete live journey is still unverified/);
+    assert.doesNotMatch(automation, /href="undefined"/);
+    assert.doesNotMatch(automation, /View on GitHub/);
     location.pathname = '/projects'; location.search = '?project=sugbogo';
     assert.match(render(), /<dialog/);
     location.pathname = '/'; location.search = ''; location.hash = '#work?project=fittrack';

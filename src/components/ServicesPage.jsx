@@ -2,56 +2,42 @@ import { Icon, IconTile, PageHeading } from './UI.jsx';
 import { pageHref } from '../routing.js';
 import { logo, skillLogos } from '../data/portfolio.js';
 
-const method = [
-  { number: '01', icon: 'spark', title: 'Understand', description: 'Start with the people, the problem, and the outcome you need.' },
-  { number: '02', icon: 'code', title: 'Build', description: 'Shape the interface, data, and workflow into a working system.' },
-  { number: '03', icon: 'check', title: 'Improve', description: 'Test the experience, refine the details, and make it useful.' },
-];
-
 const services = [
-  { icon: 'code', title: 'Websites', description: 'Responsive sites that explain your work clearly and make it easy to get in touch.', tag: 'MADE FOR PEOPLE', points: ['Thoughtful, accessible layouts', 'Fast on desktop and mobile'], toolkit: ['HTML5', 'CSS', 'JavaScript'] },
-  { icon: 'work', title: 'Web applications', description: 'Custom tools with real workflows, accounts, data, and a clear path through the task.', tag: 'BUILT TO WORK', points: ['Front end and back end', 'Structured data and dashboards'], toolkit: ['React', 'ASP.NET Core', 'PostgreSQL'] },
-  { icon: 'layers', title: 'Connected workflows', description: 'Bring forms, records, and notifications into one coherent process.', tag: 'LESS MANUAL WORK', points: ['Map the steps first', 'Connect the parts that matter'], toolkit: ['ASP.NET Core', 'PostgreSQL', 'GitHub'] },
-  { icon: 'cube', title: 'Blockchain prototypes', description: 'Explore practical Web3 ideas with interfaces and smart contract foundations.', tag: 'EXPLORE THE IDEA', points: ['Prototype the user journey', 'Connect web and contract logic'], toolkit: ['Solidity', 'Ethereum', 'Ethers.js'] },
-  { icon: 'spark', title: 'AI-assisted tools', description: 'Find useful places for AI in an existing process and test the idea with a small tool.', tag: 'PRACTICAL BY DESIGN', points: ['Human review where it matters', 'Start small and learn quickly'], toolkit: ['Codex', 'GitHub', 'React'] },
+  { icon: 'code', title: 'Websites', description: 'A clear, responsive home for your business. Built to explain what you do and help people get in touch.', toolkit: ['HTML5', 'CSS', 'JavaScript'] },
+  { icon: 'work', title: 'Web applications', description: 'Custom portals, dashboards, and everyday tools that bring your team, accounts, and data together.', toolkit: ['React', 'ASP.NET Core', 'PostgreSQL'] },
+  { icon: 'layers', title: 'Connected workflows', description: 'Connect forms, records, and notifications to keep work moving with fewer manual steps.', toolkit: ['n8n', 'PostgreSQL', 'ASP.NET Core'] },
+  { icon: 'cube', title: 'Blockchain prototypes', description: 'Test a Web3 idea with a usable interface and the smart contract foundations to support it.', toolkit: ['Solidity', 'Ethereum', 'Ethers.js'] },
+  { icon: 'spark', title: 'AI-assisted tools', description: 'Put AI to work on drafts, questions, and repetitive tasks, with your team in control of the decisions.', toolkit: ['Ollama', 'Codex', 'React'] },
 ];
-
-const flow = [
-  { icon: 'mail', label: 'Request arrives', detail: 'A form captures the need' },
-  { icon: 'layers', label: 'Details organized', detail: 'The right context is saved' },
-  { icon: 'spark', label: 'Next step suggested', detail: 'A clear action is prepared' },
-  { icon: 'check', label: 'Human review', detail: 'You choose what happens' },
+const method = [
+  { title: 'Understand', description: 'Define the problem, the people, and a useful first outcome.' },
+  { title: 'Build', description: 'Turn the agreed scope into a working interface and workflow.' },
+  { title: 'Improve', description: 'Test with real use, refine the details, and plan what comes next.' },
 ];
 
 export default function ServicesPage() {
   return <div className="services-page">
-    <PageHeading eyebrow="WHAT I CAN BUILD" title="Services" description="Websites, applications, connected workflows, blockchain prototypes, and useful AI tools. Built around the problem you want to solve.">
-      <a className="button button-primary" href={pageHref('contact')}>Start a conversation <Icon name="external" size={16} /></a>
+    <PageHeading eyebrow="WHAT I CAN BUILD" title="Services" description="Websites, applications, and automation. Thoughtfully built around the way you work.">
+      <a className="button button-primary" href={pageHref('contact')}>Start a conversation <Icon name="arrow" size={16} /></a>
     </PageHeading>
-
-    <section className="service-method glass-panel" aria-labelledby="service-method-title">
-      <div className="service-method-heading"><p className="eyebrow">THE BUILD METHOD</p><h2 id="service-method-title">Understand. Build. Improve.</h2><p>Three simple steps, in that order.</p></div>
-      <ol className="service-method-steps">{method.map(step => <li key={step.number}><span className="method-node"><Icon name={step.icon} size={23} /></span><span className="method-number">{step.number} / 03</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol>
-    </section>
-
-    <section className="service-offerings" aria-labelledby="service-offerings-title">
-      <div className="service-section-heading"><div><p className="eyebrow">WHAT I CAN DO FOR YOU</p><h2 id="service-offerings-title">Pick one, or connect a few.</h2></div><p>Each project starts with a useful first version and room to grow.</p></div>
+    <section className="service-offerings" aria-label="Development services">
       <div className="service-grid">{services.map((service, index) => <article className="service-card" key={service.title}>
-        <div className="service-card-top"><IconTile name={service.icon} /><span>{String(index + 1).padStart(2, '0')} / 05</span></div>
-        <h3>{service.title}</h3><p>{service.description}</p><div className="service-toolkit" aria-label={service.title + " tools"}>{service.toolkit.map(tool => <span className="service-tool" key={tool}><span className="service-tool-logo"><img src={logo(skillLogos[tool])} alt="" width="22" height="22" loading="lazy" /></span>{tool}</span>)}</div><span className="service-tag">{service.tag}</span>
-        <ul>{service.points.map(point => <li key={point}><Icon name="check" size={15} />{point}</li>)}</ul>
-      </article>)}</div>
-    </section>
-
-    <section className="service-workflow" aria-labelledby="service-workflow-title">
-      <div className="service-workflow-copy"><p className="eyebrow">WORKFLOW EXAMPLE</p><h2 id="service-workflow-title">One request. A clearer next step.</h2><p>A connected system can organize an incoming request, prepare a response, and leave the final decision with you.</p><div className="workflow-tags"><span>Form</span><span>App data</span><span>Notification</span><span>Human review</span></div></div>
-      <ol className="service-flow" aria-label="Example request workflow">{flow.map((step, index) => <li key={step.label} style={{ '--flow-index': index }}><span className="service-flow-icon"><Icon name={step.icon} size={22} /></span><strong>{step.label}</strong><small>{step.detail}</small></li>)}</ol>
-      <div className="service-outcomes" aria-label="Possible next steps">
-        <div><span>READY TO TALK</span><strong>Plan a conversation</strong><small>Review the response and choose a time to connect.</small></div>
-        <div><span>NEEDS MORE TIME</span><strong>Keep the context</strong><small>Save the details and decide when to follow up.</small></div>
+        <div className="service-card-top"><IconTile name={service.icon} /><span>0{index + 1}</span></div>
+        <h2>{service.title}</h2><p>{service.description}</p>
+        <div className="service-toolkit" aria-label={service.title + ' tools'}>{service.toolkit.map(tool => <span className="service-tool" key={tool}><img src={logo(skillLogos[tool])} alt="" width="16" height="16" loading="lazy" />{tool}</span>)}</div>
+      </article>)}
+        <div className="service-start"><span className="eyebrow">LET’S FIGURE IT OUT</span><h2>Have a problem<br />in mind?</h2><p>Tell me what’s slowing you down. We can find a practical place to start.</p><a className="text-link" href={pageHref('contact')}>Talk about your project <Icon name="arrow" size={16} /></a></div>
       </div>
     </section>
-
-    <div className="page-callout"><IconTile name="mail" /><div><h2>Have a project in mind?</h2><p>Tell me what you need, and we can shape the first step together.</p></div><a className="button button-primary" href={pageHref('contact')}>Get in touch <Icon name="external" size={16} /></a></div>
+    <section className="service-feature" aria-labelledby="reactivation-title">
+      <div className="service-feature-copy"><p className="eyebrow">IN THE WORKFLOW LAB</p><h2 id="reactivation-title">Your old inquiries<br />deserve a follow-up.</h2><p>Reconnect with eligible past leads, review replies, and coordinate appointments—with human approval at each important step.</p><a className="text-link" href={pageHref('ai-automation')}>Explore the workflow <Icon name="arrow" size={17} /></a></div>
+      <div className="service-feature-preview"><div className="service-preview-heading"><span>Lead Reactivation Workflow</span><span className="service-prototype"><i />Prototype</span></div>
+        <ol className="service-preview-flow" aria-label="Workflow overview">{[['layers', 'Check eligibility'], ['user', 'Human review'], ['calendar', 'Coordinate booking']].map(([icon, label]) => <li key={label}><IconTile name={icon} /><span>{label}</span></li>)}</ol>
+        <p>Illustrative walkthrough · Pilot testing<br /><span>The complete live journey is still unverified.</span></p>
+      </div>
+    </section>
+    <section className="service-method" aria-labelledby="service-method-title"><div className="service-method-heading"><p className="eyebrow">HOW WE WORK</p><h2 id="service-method-title">Understand. Build. Improve.</h2></div>
+      <ol className="service-method-steps">{method.map((step, index) => <li key={step.title}><span className="method-number">0{index + 1}</span><div><h3>{step.title}</h3><p>{step.description}</p></div></li>)}</ol>
+    </section>
   </div>;
 }

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import PortfolioShell from './components/PortfolioShell.jsx';
 import HomePage from './components/HomePage.jsx';
 import ServicesPage from './components/ServicesPage.jsx';
+import AutomationPage from './components/AutomationPage.jsx';
 import WorkflowIntro from './components/WorkflowIntro.jsx';
 import CursorRing from './components/CursorRing.jsx';
 import { ProjectsPage, ExpertisePage, AboutPage, ContactPage } from './components/PortfolioPages.jsx';
@@ -62,7 +63,7 @@ export default function App() {
   }, [page, introActive, completeIntro]);
   const content = {
     home: <HomePage introActive={introActive} />, projects: <ProjectsPage />, services: <ServicesPage />,
-    expertise: <ExpertisePage />, about: <AboutPage />, contact: <ContactPage />,
+    'ai-automation': <AutomationPage />, expertise: <ExpertisePage />, about: <AboutPage />, contact: <ContactPage />,
   };
   return <>
     <div className="portfolio-surface" data-intro-active={introActive} data-intro-played={hadIntro.current} inert={introActive ? true : undefined} aria-hidden={introActive ? true : undefined}>

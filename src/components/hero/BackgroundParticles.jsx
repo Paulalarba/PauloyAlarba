@@ -67,4 +67,4 @@ export default function BackgroundParticles({ active, reduceMotion, compact }) {
   });
 
   return <points geometry={geometry} material={material} frustumCulled={false} />;
-}
+}   

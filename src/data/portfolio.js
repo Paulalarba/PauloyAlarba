@@ -55,7 +55,7 @@ export const projects = [
     description: 'A campus platform connecting students, vendors, and administrators. Students can manage credit and repayments, vendors handle their product catalog and QR payments, and administrators oversee accreditation and limits.',
     problem: 'Campus spending and short-term credit need a coordinated process for identity checks, transactions, repayments, and vendor operations.',
     features: ['Student KYC and credit limit management', 'Session-based QR payment and vendor confirmation', 'Repayment tracking, health scoring, and spending analytics'],
-    tech: ['ASP.NET Core 10', 'C#', 'EF Core', 'PostgreSQL', 'Razor Views'], github: 'https://github.com/Paulalarba/EduCredit',
+    tech: ['ASP.NET Core 10', 'C#', 'EF Core', 'PostgreSQL', 'Razor Views'], github: 'https://github.com/Paulalarba/EduCredit', live: 'https://educredit.onrender.com/',
   },
   {
     id: 'sugbogo', name: 'SugboGo', category: 'Travel & discovery', image: 'ProjectSugboGo.png',

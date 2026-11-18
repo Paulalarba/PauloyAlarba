@@ -46,7 +46,7 @@ export const projects = [
     description: 'An FSL learning and access platform with structured courses, a searchable sign dictionary, and tools for Deaf-led education. It brings learners, teachers, and organizations into one accessible experience.',
     problem: 'Learners need a clear way to study FSL, while Deaf educators need a trusted path to share knowledge and connect with organizations.',
     features: ['Structured courses, lessons, quizzes, and progress tracking', 'Sign dictionary and accessible learning materials', 'Teacher tools and workshop request workflows'],
-    tech: ['ASP.NET Core 10', 'C#', 'Razor Views', 'EF Core', 'PostgreSQL'], github: 'https://github.com/Paulalarba/KamayAral',
+    tech: ['ASP.NET Core 10', 'C#', 'Razor Views', 'EF Core', 'PostgreSQL'], github: 'https://github.com/Paulalarba/KamayAral', live: 'https://kamayaral.onrender.com/',
   },
   {
     id: 'educredit', name: 'EduCredit', category: 'Campus payments & credit', image: 'ProjectEduCreditMockup.svg',
